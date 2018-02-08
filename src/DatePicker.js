@@ -13,7 +13,7 @@ import BaseDialog from './BaseDialog';
 
 import TimeUtils from './TimeUtils';
 
-export default class TimePicker extends BaseDialog {
+export default class DatePicker extends BaseDialog {
 
     static defaultProps = {
         unit: ['年', '月', '日'],
