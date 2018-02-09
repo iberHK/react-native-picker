@@ -25,69 +25,90 @@ export default class DatePicker extends BaseDialog {
         pickerAcceptBtnText: '确定',
         itemHeight: 40,
         onCancelCallback: null,
-        onAcceptCallback: null
+        onAcceptCallback: null,
+        onBackgroundClickCallback: null
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            visible: false,
-            path: new Animated.Value(0),
-            pickerCancelBtnText: '取消',
-            ...this.initTimeList()
-        };
-    }
+    getDateList() {
+        try {
+            let unit = this.props.unit;
+            let years = [];
+            let months = [];
+            let days = [];
+            let hours = [];
+            let minutes = [];
 
-    initTimeList() {
-        let unit = this.props.unit;
-        let years = [];
-        let months = [];
-        let days = [];
-        let hours = [];
-        let minutes = [];
+            let startYear = this.props.startYear;
+            let endYear = this.props.endYear;
+            for (let i = 0; i < endYear + 1 - startYear; i++) {
+                years.push(i + startYear + unit[0]);
+            }
 
-        let startYear = this.props.startYear;
-        let endYear = this.props.endYear;
-        for (let i = 0; i < endYear + 1 - startYear; i++) {
-            years.push(i + startYear + unit[0]);
-        }
+            let selectedYear = years[0];
+            if (this.props.selectedValue) {
+                selectedYear = this.props.selectedValue[0];
+            }
+            selectedYear = selectedYear.substr(0, selectedYear.length - unit[0].length);
+            for (let i = 1; i < 13; i++) {
+                months.push(i + unit[1]);
+            }
 
-        let selectedYear = years[0];
-        if (this.props.selectedValue) {
-            selectedYear = this.props.selectedValue[0];
-        }
-        selectedYear = selectedYear.substr(0, selectedYear.length - unit[0].length);
-        for (let i = 1; i < 13; i++) {
-            months.push(i + unit[1]);
-        }
+            let selectedMonth = months[0];
+            if (this.props.selectedValue) {
+                selectedMonth = this.props.selectedValue[1];
+            }
+            selectedMonth = selectedMonth.substr(0, selectedMonth.length - unit[1].length);
 
-        let selectedMonth = months[0];
-        if (this.props.selectedValue) {
-            selectedMonth = this.props.selectedValue[1];
-        }
-        selectedMonth = selectedMonth.substr(0, selectedMonth.length - unit[1].length);
+            let dayCount = TimeUtils.getDaysInOneMonth(selectedYear, selectedMonth);
+            for (let i = 1; i <= dayCount; i++) {
+                days.push(i + unit[2]);
+            }
 
-        let dayCount = TimeUtils.getDaysInOneMonth(selectedYear, selectedMonth);
-        for (let i = 1; i <= dayCount; i++) {
-            days.push(i + unit[2]);
+            let selectedDay = days[0];
+            if (this.props.selectedValue) {
+                selectedDay = this.props.selectedValue[2];
+            }
+            selectedDay = selectedDay.substr(0, selectedDay.length - unit[2].length);
+            return {
+                pickerData: [years, months, days],
+                selectedIndex: [
+                    years.indexOf(selectedYear + unit[0]) == -1 ? years.length - 1 : years.indexOf(selectedYear + unit[0]),
+                    months.indexOf(selectedMonth + unit[1]),
+                    days.indexOf(selectedDay + unit[2]) == -1 ? days.length - 1 : days.indexOf(selectedDay + unit[2])]
+            };
+        } catch (error) {
+            console.error('pickerData应为数组，且长度为3');
+            return null;
         }
-
-        let selectedDay = days[0];
-        if (this.props.selectedValue) {
-            selectedDay = this.props.selectedValue[2];
-        }
-        selectedDay = selectedDay.substr(0, selectedDay.length - unit[2].length);
-        return {
-            pickerData: [years, months, days],
-            selectedIndex: [
-                years.indexOf(selectedYear + unit[0]),
-                months.indexOf(selectedMonth + unit[1]),
-                days.indexOf(selectedDay + unit[2]) == -1 ? days.length - 1 : days.indexOf(selectedDay + unit[2])]
-        };
     }
 
     _getContentPosition() {
         return { justifyContent: 'flex-end', alignItems: 'center' }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (JSON.stringify(nextProps.unit) != JSON.stringify(this.props.unit)) {
+            return true;
+        } else if (JSON.stringify(nextProps.selectedValue) != JSON.stringify(this.props.selectedValue)) {
+            return true;
+        } else if (this.props.startYear != nextProps.startYear) {
+            return true;
+        } else if (this.props.endYear != nextProps.endYear) {
+            return true;
+        } else if (this.props.removeSubviews != nextProps.removeSubviews) {
+            return true;
+        } else if (this.props.pickerCancelBtnText != nextProps.pickerCancelBtnText) {
+            return true;
+        } else if (this.props.pickerAcceptBtnText != nextProps.pickerAcceptBtnText) {
+            return true;
+        } else if (this.props.itemHeight != nextProps.itemHeight) {
+            return true;
+        } else if (this.props.onCancelCallback != nextProps.onCancelCallback) {
+            return true;
+        } else if (this.props.onAcceptCallback != nextProps.onAcceptCallback) {
+            return true;
+        }
+        return false;
     }
 
     renderPicker() {
@@ -110,6 +131,9 @@ export default class DatePicker extends BaseDialog {
     }
 
     renderContent() {
+        let data = this.getDateList();
+        this.state.pickerData = data.pickerData;
+        this.state.selectedIndex = data.selectedIndex;
         return <View
             style={{
                 height: this.props.itemHeight * 5 + this.getSize(15) + this.getSize(44), width: this.mScreenWidth,
@@ -124,16 +148,14 @@ export default class DatePicker extends BaseDialog {
             }}>
                 <TouchableOpacity
                     onPress={() => {
-                        this.dismiss();
-                        this.state.onPickerCancel && this.state.onPickerCancel(this.props.selectedValue);
+                        this.dismiss(() => this.props.onCancelCallback && this.props.onCancelCallback(this.props.selectedValue));
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>{this.props.pickerCancelBtnText}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
-                        this.dismiss();
-                        this.state.onPickerConfirm && this.state.onPickerConfirm(this.props.selectedValue);
+                        this.dismiss(() => this.props.onAcceptCallback && this.props.onAcceptCallback(this.props.selectedValue));
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>{this.props.pickerAcceptBtnText}</Text>

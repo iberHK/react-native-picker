@@ -17,18 +17,18 @@ import BaseDialog from './BaseDialog';
 
 export default class AreaPicker extends BaseDialog {
 
+    static defaultProps = {
+        selectedValue: ['香港', '香港', '中西區']
+    }
+
     constructor(props) {
         super(props);
         this.state = {
             areaData: this.getAreaData(),
             path: new Animated.Value(0),
+            ...this.formatPickerData(props.selectedValue)
             // removeSubviews: true          //隐藏的时候是否移除renderContent，true 不移除更流畅，false 移除内存更小
         };
-    }
-
-    show(selectedValue) {
-        this.formatPickerData(selectedValue);
-        super.show();
     }
 
     _getContentPosition() {
@@ -52,10 +52,7 @@ export default class AreaPicker extends BaseDialog {
         return data;
     }
 
-    formatPickerData(selectedValue) {
-        if (selectedValue == null || selectedValue.length < 3) {
-            selectedValue = ['香港', '香港', '中西區']
-        }
+    formatPickerData() {
         let province = [];
         let city = [];
         let county = [];
@@ -65,14 +62,14 @@ export default class AreaPicker extends BaseDialog {
         areaData.map((pitem) => {
             for (let pname in pitem) {
                 province.push(pname)
-                if (pname == selectedValue[0]) {
+                if (pname == this.props.selectedValue[0]) {
                     pitem[pname].map(citem => {
                         for (let cname in citem) {
                             if (firstCity == null) {
                                 firstCity = cname;
                             }
                             city.push(cname);
-                            if (cname == selectedValue[1]) {
+                            if (cname == this.props.selectedValue[1]) {
                                 county = citem[cname];
                                 if (firstCountry == null) {
                                     firstCountry = citem[cname][0];
@@ -84,19 +81,18 @@ export default class AreaPicker extends BaseDialog {
             }
         });
 
-        if (county.indexOf(selectedValue[2]) == -1) {
-            selectedValue[2] = firstCountry;
+        if (county.indexOf(this.props.selectedValue[2]) == -1) {
+            this.props.selectedValue[2] = firstCountry;
         }
 
         if (county.length == 0 && firstCity != null) {
-            selectedValue[1] = firstCity;
-            return this.formatPickerData(selectedValue);
+            this.props.selectedValue[1] = firstCity;
+            return this.formatPickerData();
         }
 
-        this.setState({
-            pickerData: [province, city, county], selectedValue: selectedValue,
-            visible: true
-        });
+        return {
+            pickerData: [province, city, county], visible: true
+        };
     }
 
     renderPicker() {
@@ -104,7 +100,7 @@ export default class AreaPicker extends BaseDialog {
             let selectedIndex = 0;
             let length = item.length;
             for (let i = 0; i < length; i++) {
-                if (item[i] == this.state.selectedValue[pickerId]) {
+                if (item[i] == this.props.selectedValue[pickerId]) {
                     selectedIndex = i;
                     break;
                 }
@@ -114,8 +110,8 @@ export default class AreaPicker extends BaseDialog {
                     key={'picker' + pickerId}
                     list={item}
                     onPickerSelect={(toValue) => {
-                        this.state.selectedValue[pickerId] = toValue;
-                        this.formatPickerData(this.state.selectedValue);
+                        this.props.selectedValue[pickerId] = toValue;
+                        this.setState({ ...this.formatPickerData(this.props.selectedValue) });
                     }}
                     selectedIndex={selectedIndex}
                     fontSize={this.getSize(14)}
@@ -143,16 +139,18 @@ export default class AreaPicker extends BaseDialog {
             }}>
                 <TouchableOpacity
                     onPress={() => {
-                        this.dismiss();
-                        this.props.onPickerCancel && this.props.onPickerCancel();
+                        this.dismiss(() => {
+                            this.props.onPickerCancel && this.props.onPickerCancel();
+                        });
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>取消</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
-                        this.dismiss();
-                        this.props.onPickerConfirm && this.props.onPickerConfirm(this.state.selectedValue);
+                        this.dismiss(() => {
+                            this.props.onPickerConfirm && this.props.onPickerConfirm(this.props.selectedValue);
+                        });
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>確定</Text>

@@ -31,23 +31,10 @@ export default class BaseDialog extends BaseComponent {
     show(callback, state = {}) {
         Keyboard.dismiss();
         this.setState({ _isShow: true, ...state }, () => {
-            if (this.bottom) {
-                Animated.timing(this._path, { toValue: 1, duration: 200 }).start(() => {
-                    callback && callback();
-                });
-            } else {
-                Animated.spring(this._path, { toValue: 1 }).start(() => {
-                    callback && callback();
-                });
-            }
+            Animated.spring(this._path, { toValue: 1 }).start(() => {
+                callback && callback();
+            });
         });
-        if (!this.props || (this.props.bgCloseable || this.props.bgCloseable == null)) {
-            if (global.dialog == null) {
-                global.dialog = [];
-            }
-            global.dialog.push(this);
-            this._index = global.dialog.length - 1;
-        }
     }
 
     dismiss(callback) {
@@ -56,11 +43,6 @@ export default class BaseDialog extends BaseComponent {
                 callback && callback();
             });
         });
-        if (!this.props || (this.props.bgCloseable || this.props.bgCloseable == null)) {
-            if (global.dialog != null) {
-                global.dialog.splice(this._index, 1);
-            }
-        }
     }
 
     /**

@@ -13,12 +13,16 @@ import CustomPicker from './CustomPicker';
 
 import AreaPicker from './AreaPicker';
 
-import TimePicker from './TimePicker';
+import DatePicker from './DatePicker';
 
 export default class MainPage extends BaseComponent {
 
     constructor(props) {
         super(props);
+        this.state = {
+            unit: ['年', '月', '日'],
+            startYear: 1900
+        }
     }
 
     renderButton(text, callback) {
@@ -64,15 +68,25 @@ export default class MainPage extends BaseComponent {
             backgroundColor: '#f9fafb', justifyContent: 'center', alignItems: 'center'
         }}>
             {this.renderButton('最简单的自定义picker', () => { this.CustomPicker.show() })}
-            {this.renderButton('行政区域picker', () => { this.AreaPicker.show(this.seletedArea) })}
-            {this.renderButton('TimePicker', () => { this.TimePicker.show() })}
+            {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
+            {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
             <CustomPicker ref={ref => this.CustomPicker = ref} />
             <AreaPicker
-                onPickerCancel={() => { console.warn('行政区域picker-取消') }}
-                onPickerConfirm={(value) => { this.seletedArea = value; console.warn(JSON.stringify(value)) }}
+                onPickerCancel={() => { }}
+                onPickerConfirm={(value) => {
+                    alert(JSON.stringify(value));
+                }}
                 ref={ref => this.AreaPicker = ref} />
-            <TimePicker
-                ref={ref => this.TimePicker = ref} />
+            <DatePicker
+                unit={this.state.unit}
+                startYear={this.state.startYear}
+                onAcceptCallback={(value) => {
+                    alert(JSON.stringify(value))
+                }}
+                onCancelCallback={() => {
+                    alert('cancel')
+                }}
+                ref={ref => this.DatePicker = ref} />
         </View>
     }
 
