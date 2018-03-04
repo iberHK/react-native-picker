@@ -26,7 +26,10 @@ export default class DatePicker extends BaseDialog {
         itemHeight: 40,
         onCancelCallback: null,
         onAcceptCallback: null,
-        onBackgroundClickCallback: null
+        onBackgroundClickCallback: null,
+        HH: true,
+        mm: true,
+        ss: true
     }
 
     constructor(props) {
@@ -36,12 +39,11 @@ export default class DatePicker extends BaseDialog {
 
 
     getDateList() {
+        console.log(this.props.selectedValue)
         let unit = this.props.unit;
         let years = [];
         let months = [];
         let days = [];
-        let hours = [];
-        let minutes = [];
 
         let startYear = this.props.startYear;
         let endYear = this.props.endYear;
@@ -74,14 +76,59 @@ export default class DatePicker extends BaseDialog {
             selectedDay = this.props.selectedValue[2];
         }
         selectedDay = selectedDay.substr(0, selectedDay.length - unit[2].length);
+
+        pickerData = [years, months, days];
+
+        selectedIndex = [
+            years.indexOf(selectedYear + unit[0]) == -1 ? years.length - 1 : years.indexOf(selectedYear + unit[0]),
+            months.indexOf(selectedMonth + unit[1]),
+            days.indexOf(selectedDay + unit[2]) == -1 ? days.length - 1 : days.indexOf(selectedDay + unit[2])];
+
+        if (this.props.HH) {
+            let hours = [];
+            for (let i = 0; i < 24; i++) {
+                hours.push((i + 1) + '时');
+            }
+            pickerData.push(hours);
+            if (this.props.selectedValue) {
+                selectedIndex.push((this.props.selectedValue[3] ? parseInt(this.props.selectedValue[3]) : new Date().getHours()) - 1);
+            } else {
+                selectedIndex.push((new Date().getHours() - 1));
+            }
+            this.props.selectedValue[3] = (selectedIndex[3] + 1) + '时';
+            if (this.props.mm) {
+                let minutes = [];
+                for (let i = 0; i < 60; i++) {
+                    minutes.push((i + 1) + '分');
+                }
+                pickerData.push(minutes);
+                if (this.props.selectedValue) {
+                    selectedIndex.push((this.props.selectedValue[4] ? parseInt(this.props.selectedValue[4]) : new Date().getMinutes()) - 1);
+                } else {
+                    selectedIndex.push((new Date().getMinutes() - 1));
+                }
+                this.props.selectedValue[4] = (selectedIndex[4] + 1) + '分';
+                if (this.props.ss) {
+                    let seconds = [];
+                    for (let i = 0; i < 60; i++) {
+                        seconds.push((i + 1) + '秒');
+                    }
+                    pickerData.push(seconds);
+                    if (this.props.selectedValue) {
+                        selectedIndex.push((this.props.selectedValue[5] ? parseInt(this.props.selectedValue[5]) : 1) - 1);
+                    } else {
+                        selectedIndex.push(1);
+                    }
+                    this.props.selectedValue[5] = (selectedIndex[5] + 1) + '秒';
+                }
+            }
+        }
+
+
         let data = {
-            pickerData: [years, months, days],
-            selectedIndex: [
-                years.indexOf(selectedYear + unit[0]) == -1 ? years.length - 1 : years.indexOf(selectedYear + unit[0]),
-                months.indexOf(selectedMonth + unit[1]),
-                days.indexOf(selectedDay + unit[2]) == -1 ? days.length - 1 : days.indexOf(selectedDay + unit[2])]
+            pickerData: pickerData,
+            selectedIndex: selectedIndex,
         };
-        console.log(data);
         return data;
     }
 
