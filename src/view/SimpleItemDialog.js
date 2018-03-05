@@ -11,7 +11,7 @@ import {
 
 import BaseDialog from './BaseDialog';
 
-export default class SimpleItemDialog extends BaseDialog {
+class SimpleItemDialog extends BaseDialog {
 
     static defaultProps = {
         items: ['a', 'b', 'c'],
@@ -66,5 +66,6 @@ export default class SimpleItemDialog extends BaseDialog {
             {this.props.cancel ? this.renderCancel() : null}
         </View>
     }
-
 }
+
+export default SimpleItemDialog;

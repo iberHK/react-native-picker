@@ -14,7 +14,7 @@ import BaseDialog from './BaseDialog';
 /**
  * 用于不跳转页面的选择
  */
-export default class SimpleChooseDialog extends BaseDialog {
+class SimpleChooseDialog extends BaseDialog {
 
     static defaultProps = {
         items: ['a', 'b', 'c'],
@@ -79,3 +79,5 @@ export default class SimpleChooseDialog extends BaseDialog {
     }
 
 }
+
+export default SimpleChooseDialog;

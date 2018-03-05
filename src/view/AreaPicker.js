@@ -11,11 +11,11 @@ import PropTypes from 'prop-types';
 
 import PickerView from './PickerView';
 
-import area from './Area.json';
+import area from '../utils/Area.json';
 
 import BaseDialog from './BaseDialog';
 
-export default class AreaPicker extends BaseDialog {
+class AreaPicker extends BaseDialog {
 
     static defaultProps = {
         selectedValue: ['香港', '香港', '中西區']
@@ -158,3 +158,5 @@ export default class AreaPicker extends BaseDialog {
         </View>
     }
 }
+
+export default AreaPicker;

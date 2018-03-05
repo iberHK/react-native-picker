@@ -11,9 +11,9 @@ import PickerView from './PickerView';
 
 import BaseDialog from './BaseDialog';
 
-import TimeUtils from './TimeUtils';
+import TimeUtils from '../utils/TimeUtils';
 
-export default class DatePicker extends BaseDialog {
+class DatePicker extends BaseDialog {
 
     static defaultProps = {
         unit: ['年', '月', '日'],
@@ -218,3 +218,5 @@ export default class DatePicker extends BaseDialog {
         </View>
     }
 }
+
+export default DatePicker;

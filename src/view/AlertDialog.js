@@ -11,7 +11,7 @@ import {
 
 import BaseDialog from './BaseDialog';
 
-export default class AlertDialog extends BaseDialog {
+class AlertDialog extends BaseDialog {
 
     static defaultProps = {
         messageText: 'Alert Message',
@@ -83,3 +83,5 @@ export default class AlertDialog extends BaseDialog {
     }
 
 }
+
+export default AlertDialog;

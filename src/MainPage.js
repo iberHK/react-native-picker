@@ -7,21 +7,23 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import BaseComponent from './BaseComponent';
+import AlertDialog from './view/AlertDialog';
 
-import CustomPicker from './CustomPicker';
+import AreaPicker from './view/AreaPicker';
 
-import AreaPicker from './AreaPicker';
+import CustomPicker from './view/CustomPicker';
 
-import DatePicker from './DatePicker';
+import DatePicker from './view/DatePicker';
 
-import AlertDialog from './AlertDialog';
+import InputDialog from './view/InputDialog';
 
-import SimpleItemDialog from './SimpleItemDialog';
+import PickerView from './view/PickerView';
 
-import SimpleChooseDialog from './SimpleChooseDialog';
+import SimpleChooseDialog from './view/SimpleChooseDialog';
 
-import InputDialog from './InputDialog';
+import SimpleItemDialog from './view/SimpleItemDialog';
+
+import BaseComponent from './view/BaseComponent';
 
 export default class MainPage extends BaseComponent {
 

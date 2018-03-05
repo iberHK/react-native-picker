@@ -15,7 +15,7 @@ import BaseDialog from './BaseDialog';
 
 import KeyboardSpacer from './KeyboardSpacer';
 
-export default class InputDialog extends BaseDialog {
+class InputDialog extends BaseDialog {
 
     static defaultProps = {
         removeSubviews: false,
@@ -38,7 +38,7 @@ export default class InputDialog extends BaseDialog {
     }
 
     dismiss(callback) {
-        Keyboard.dismiss();
+        this.text.blur();
         super.dismiss(callback);
     }
 
@@ -97,3 +97,5 @@ export default class InputDialog extends BaseDialog {
     }
 
 }
+
+export default InputDialog;

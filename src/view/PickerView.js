@@ -17,7 +17,7 @@ import Svg, {
     Stop
 } from 'react-native-svg';
 
-export default class PickerView extends BaseComponent {
+class PickerView extends BaseComponent {
 
     _previousTop = 0;
 
@@ -343,3 +343,5 @@ export default class PickerView extends BaseComponent {
         </View>
     }
 }
+
+export default PickerView;

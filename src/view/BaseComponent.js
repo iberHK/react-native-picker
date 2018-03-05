@@ -10,7 +10,7 @@ import {
  * Compnent基類,
  * 父類
  */
-export default class BaseComponent extends Component {
+class BaseComponent extends Component {
 
     mScreenWidth = Dimensions.get('window').width;
 
@@ -32,3 +32,5 @@ export default class BaseComponent extends Component {
     }
 
 }
+
+export default BaseComponent;
