@@ -16,4 +16,4 @@
 
 
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png)
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date1.png)
+![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/xxx.png)
