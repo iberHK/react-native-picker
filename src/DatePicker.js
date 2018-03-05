@@ -39,7 +39,7 @@ export default class DatePicker extends BaseDialog {
 
 
     getDateList() {
-        console.log(this.props.selectedValue)
+        console.log(this.props)
         let unit = this.props.unit;
         let years = [];
         let months = [];

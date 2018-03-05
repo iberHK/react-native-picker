@@ -82,6 +82,7 @@ export default class MainPage extends BaseComponent {
             {this.renderButton('最简单的自定义picker', () => { this.CustomPicker.show() })}
             {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
             {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
+            {this.renderButton('DatePicker1', () => { this.DatePicker1.show() })}
             <AlertDialog onPress={(isOK) => {
                 alert(isOK ? 'ok' : 'cancel');
             }} ref={ref => this.AlertDialog = ref} />
@@ -110,6 +111,19 @@ export default class MainPage extends BaseComponent {
                     alert('cancel')
                 }}
                 ref={ref => this.DatePicker = ref} />
+            <DatePicker
+                HH={false}
+                mm={false}
+                ss={false}
+                unit={this.state.unit}
+                startYear={this.state.startYear}
+                onAcceptCallback={(value) => {
+                    alert(JSON.stringify(value))
+                }}
+                onCancelCallback={() => {
+                    alert('cancel')
+                }}
+                ref={ref => this.DatePicker1 = ref} />
         </View>
     }
 
