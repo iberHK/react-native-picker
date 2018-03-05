@@ -15,6 +15,14 @@ import AreaPicker from './AreaPicker';
 
 import DatePicker from './DatePicker';
 
+import AlertDialog from './AlertDialog';
+
+import SimpleItemDialog from './SimpleItemDialog';
+
+import SimpleChooseDialog from './SimpleChooseDialog';
+
+import InputDialog from './InputDialog';
+
 export default class MainPage extends BaseComponent {
 
     constructor(props) {
@@ -67,9 +75,24 @@ export default class MainPage extends BaseComponent {
             width: this.mScreenWidth, height: this.mScreenHeight,
             backgroundColor: '#f9fafb', justifyContent: 'center', alignItems: 'center'
         }}>
+            {this.renderButton('AlertDialog', () => { this.AlertDialog.show() })}
+            {this.renderButton('SimpleItemDialog', () => { this.SimpleItemDialog.show() })}
+            {this.renderButton('SimpleChooseDialog', () => { this.SimpleChooseDialog.show() })}
+            {this.renderButton('InputDialog', () => { this.InputDialog.show() })}
             {this.renderButton('最简单的自定义picker', () => { this.CustomPicker.show() })}
             {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
             {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
+            <AlertDialog onPress={(isOK) => {
+                alert(isOK ? 'ok' : 'cancel');
+            }} ref={ref => this.AlertDialog = ref} />
+            <SimpleItemDialog ref={ref => this.SimpleItemDialog = ref}
+                onPress={(which) => {
+                    alert(which)
+                }} />
+            <SimpleChooseDialog ref={ref => this.SimpleChooseDialog = ref}
+                onPress={(which) => { alert(which) }} />
+            <InputDialog ref={ref => this.InputDialog = ref}
+                onSubmit={(text) => { alert(text) }} />
             <CustomPicker ref={ref => this.CustomPicker = ref} />
             <AreaPicker
                 onPickerCancel={() => { }}

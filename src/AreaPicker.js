@@ -27,7 +27,6 @@ export default class AreaPicker extends BaseDialog {
             areaData: this.getAreaData(),
             path: new Animated.Value(0),
             ...this.formatPickerData(props.selectedValue)
-            // removeSubviews: true          //隐藏的时候是否移除renderContent，true 不移除更流畅，false 移除内存更小
         };
     }
 
