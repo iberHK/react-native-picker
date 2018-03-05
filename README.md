@@ -5,6 +5,8 @@
 
 由于很多属性并没有封装好开放，所以暂时直接以源码形式分享，未插件化（2018年3月5日）
 
+欢迎直接下载代码删改使用，欢迎沟通了解实现原理，有帮得上的，记得给星哦~
+
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/alert.png)
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png)
 
