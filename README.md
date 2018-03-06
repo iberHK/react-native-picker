@@ -9,9 +9,7 @@
 <code>yarn add react-native-pickers</code><br>
 
 ### 使用：
-<br>
 ######AlertDialog:
-<br>
 <table>
     <thead>
         <tr>
