@@ -95,7 +95,7 @@
             <td>items</td>
             <td>['a', 'b', 'c']</td>
             <td>列表数据，可以string、object(需要指定itemKey)</td>
-            <td rowspan="10">
+            <td rowspan="8">
                 <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png"/>
             </td>
         </tr>
@@ -168,7 +168,7 @@
             <td>['a', 'b', 'c']</td>
             <td>列表数据，可以string、object<br>
                 (需要指定itemKey)</td>
-            <td rowspan="11">
+            <td rowspan="8">
                 <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/simplechoosedialog.png"/>
             </td>
         </tr>
@@ -421,7 +421,7 @@
             <td>itemTextColor</td>
             <td>0x333333ff</td>
             <td>item正常颜色，仅支持<code>16进制数字</code></td>
-            <td rowspan="12">
+            <td rowspan="8">
                 <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png"/>
             </td>
         </tr>
