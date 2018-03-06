@@ -111,13 +111,11 @@
         <tr>
             <td>itemStyle</td>
             <td>
-                <code>
                     {<br>
                         fontSize: 14,<br>
                         fontWeight: '400',<br>
                         color: '#333333'<br>
                     }
-                </code>
             </td>
             <td>列表文字样式</td>
         </tr>
@@ -134,13 +132,11 @@
         <tr>
             <td>cancelTextStyle</td>
             <td>
-                <code>
                     {<br>
                         fontSize: 14,<br>
                         fontWeight: '400',<br>
                         color: '#999999'<br>
                     }
-                </code>
             </td>
             <td>取消文本字体样式</td>
         </tr>
