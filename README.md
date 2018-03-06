@@ -319,9 +319,6 @@
 </table>
 
 
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/inputdialog.png)
-
-
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/customer.png)
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/area.png)
 
