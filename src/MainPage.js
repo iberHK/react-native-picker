@@ -25,6 +25,8 @@ import SimpleItemsDialog from './view/SimpleItemsDialog';
 
 import BaseComponent from './view/BaseComponent';
 
+import AreaJson from './Area.json';
+
 export default class MainPage extends BaseComponent {
 
     constructor(props) {
@@ -77,6 +79,7 @@ export default class MainPage extends BaseComponent {
                 onSubmit={(text) => { alert(text) }} />
             <CustomPicker ref={ref => this.CustomPicker = ref} />
             <AreaPicker
+                areaJson={AreaJson}
                 onPickerCancel={() => { }}
                 onPickerConfirm={(value) => {
                     alert(JSON.stringify(value));

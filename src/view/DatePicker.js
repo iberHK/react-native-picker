@@ -29,7 +29,7 @@ class DatePicker extends BaseDialog {
         onBackgroundClickCallback: null,
         HH: true,
         mm: true,
-        ss: true,
+        ss: true
     }
 
     constructor(props) {

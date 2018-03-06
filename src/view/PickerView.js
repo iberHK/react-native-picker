@@ -19,6 +19,11 @@ import Svg, {
 
 class PickerView extends BaseComponent {
 
+    static defaultProps = {
+        itemTextColor: 0x333333ff,
+        itemSelectedColor: 0x1097D5ff
+    }
+
     _previousTop = 0;
 
     lastTop = 0;
@@ -247,7 +252,7 @@ class PickerView extends BaseComponent {
             <Animated.Text style={{
                 color: this.colorPath[index].interpolate({
                     inputRange: [0, 1],
-                    outputRange: [0x333333ff, 0x1097D5ff]
+                    outputRange: [this.props.itemTextColor, this.props.itemSelectedColor]
                 }), fontSize: this.props.fontSize ? this.props.fontSize : this.getSize(20),
                 backgroundColor: 'transparent', fontWeight: 'normal'
             }}>{item}</Animated.Text>

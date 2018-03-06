@@ -11,14 +11,23 @@ import PropTypes from 'prop-types';
 
 import PickerView from './PickerView';
 
-import area from '../utils/Area.json';
-
 import BaseDialog from './BaseDialog';
 
 class AreaPicker extends BaseDialog {
 
     static defaultProps = {
-        selectedValue: ['香港', '香港', '中西區']
+        selectedValue: ['香港', '香港', '中西區'],
+        areaJson: null,
+        confirmText: '确定',
+        confirmTextSize: 14,
+        confirmTextColor: '#333333',
+        cancelText: '取消',
+        cancelTextSize: 14,
+        cancelTextColor: '#333333',
+        itemTextColor: 0x333333ff,
+        itemSelectedColor: 0x1097D5ff,
+        onPickerCancel: null,
+        onPickerConfirm: null
     }
 
     constructor(props) {
@@ -35,6 +44,7 @@ class AreaPicker extends BaseDialog {
     }
 
     getAreaData() {
+        let area = this.props.areaJson;
         let data = [];
         let len = area.length;
         for (let i = 0; i < len; i++) {
@@ -106,6 +116,8 @@ class AreaPicker extends BaseDialog {
             }
             if (item && length > 0) {
                 return <PickerView
+                    itemTextColor={this.props.itemTextColor}
+                    itemSelectedColor={this.props.itemSelectedColor}
                     key={'picker' + pickerId}
                     list={item}
                     onPickerSelect={(toValue) => {
@@ -143,7 +155,7 @@ class AreaPicker extends BaseDialog {
                         });
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>取消</Text>
+                    <Text style={{ fontSize: this.props.cancelTextSize, fontWeight: '400', color: this.props.cancelTextColor }}>{this.props.cancelText}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
@@ -152,7 +164,7 @@ class AreaPicker extends BaseDialog {
                         });
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>確定</Text>
+                    <Text style={{ fontSize: this.props.confirmTextSize, fontWeight: '400', color: this.props.confirmTextColor }}>{this.props.confirmText}</Text>
                 </TouchableOpacity>
             </View>
         </View>
