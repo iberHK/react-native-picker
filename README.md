@@ -253,7 +253,7 @@
             <td>title</td>
             <td>'我要举报'</td>
             <td>标题文本</td>
-            <td rowspan="11">
+            <td rowspan="12">
                 <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/inputdialog.png"/>
             </td>
         </tr>
@@ -314,7 +314,7 @@
                 返回输入的文本内容
             </td>
         </tr>
-        <tr><td>InputDialog.show(text(输入框文字))</td></tr>
+        <tr><td colspan="4">InputDialog.show(text(输入框文字))</td></tr>
     </tbody>
 </table>
 
