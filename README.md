@@ -103,19 +103,19 @@
             <td>itemKey</td>
             <td>'key'</td>
             <td>
-            当item为object时，来制定显示的属性<br>
-            <code>items:[{id:0, value: 'v1'},{id:0, value: 'v1'}]</code>
-            <code>itemKey设为'value',则等同于<code>['v1', 'v2']</code>
+                当item为object时，来制定显示的属性<br>
+                <code>items:[{id:0, value: 'v1'},{id:0, value: 'v1'}]</code><br>
+                <code>itemKey设为'value',则等同于<code>['v1', 'v2']</code><br>
             </td>
         </tr>
         <tr>
             <td>itemStyle</td>
             <td>
                 <code>
-                    {
-                        fontSize: 14,
-                        fontWeight: '400',
-                        color: '#333333'
+                    {<br>
+                        fontSize: 14,<br>
+                        fontWeight: '400',<br>
+                        color: '#333333'<br>
                     }
                 </code>
             </td>
