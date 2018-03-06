@@ -238,7 +238,7 @@
 </table>
 
 
-<code>SimpleChooseDialog:</code>
+<code>InputDialog:</code>
 <table>
     <thead>
         <tr>
@@ -314,7 +314,7 @@
                 返回输入的文本内容
             </td>
         </tr>
-        <tr>InputDialog.show(text(输入框文字))</tr>
+        <tr><td>InputDialog.show(text(输入框文字))</td></tr>
     </tbody>
 </table>
 
