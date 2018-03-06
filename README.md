@@ -314,7 +314,7 @@
                 返回输入的文本内容
             </td>
         </tr>
-        <tr><td colspan="4">InputDialog.show(text(输入框文字))</td></tr>
+        <tr><td colspan="4">InputDialog.show(text)</td></tr>
     </tbody>
 </table>
 
