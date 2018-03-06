@@ -95,7 +95,7 @@
             <td>items</td>
             <td>['a', 'b', 'c']</td>
             <td>列表数据，可以string、object(需要指定itemKey)</td>
-            <td rowspan="8">
+            <td rowspan="5">
                 <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png"/>
             </td>
         </tr>
