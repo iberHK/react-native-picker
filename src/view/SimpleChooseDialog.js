@@ -29,7 +29,7 @@ class SimpleChooseDialog extends BaseDialog {
         pointSize: 18,
         pointBorderRadius: 9,
         confirmText: '确定',
-        confirmButtonColor: '#1097D5',
+        confirmBtnColor: '#1097D5',
         confirmTextColor: '#ffffff',
         onPress: null,
     }
@@ -84,7 +84,7 @@ class SimpleChooseDialog extends BaseDialog {
                 }}
                 style={{
                     width: this.getSize(200), height: this.getSize(44),
-                    backgroundColor: this.props.confirmButtonColor, borderRadius: this.getSize(5),
+                    backgroundColor: this.props.confirmBtnColor, borderRadius: this.getSize(5),
                     justifyContent: 'center', alignItems: 'center', marginTop: this.getSize(13), marginBottom: this.getSize(20)
                 }}>
                 <Text style={{ color: this.props.confirmTextColor, fontSize: this.getSize(16), fontWeight: '400' }}>{this.props.confirmText}</Text>

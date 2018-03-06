@@ -218,7 +218,7 @@
             <td>确定选择文本</td>
         </tr>
         <tr>
-            <td>confirmButtonColor</td>
+            <td>confirmBtnColor</td>
             <td>'#1097D5'</td>
             <td>确定选择按钮颜色</td>
         </tr>
@@ -237,8 +237,6 @@
     </tbody>
 </table>
 
-
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/simplechoosedialog.png)
 
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/input.png)
 
