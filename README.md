@@ -80,7 +80,7 @@
 
 
 
-#<code>SimpleItemsDialog:</code>
+<code>SimpleItemsDialog:</code>
 <table>
     <thead>
         <tr>
@@ -314,7 +314,7 @@
                 返回输入的文本内容
             </td>
         </tr>
-        <tr><td colspan="4">InputDialog.show(text)</td></tr>
+        <tr><td colspan="4">InputDialog.show(text)，显示dialog，text：用于编辑时，设置前值</td></tr>
     </tbody>
 </table>
 
