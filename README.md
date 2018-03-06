@@ -9,14 +9,13 @@
 
 AlertDialog:
 
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png)
-
 <table>
     <thead>
         <tr>
             <th>属性</th>
             <th>默认值</th>
             <th>描述</th>
+            <th>截图</th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +23,9 @@ AlertDialog:
             <td>messageText</td>
             <td>'Alert Message'</td>
             <td>消息文本</td>
-            <td width="25%" rowspan="5" colspan="2">3</td>
+            <td width="25%" rowspan="9" colspan="2">
+            ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png)
+            </td>
         </tr>
         <tr>
             <td>messageTextColor</td>
