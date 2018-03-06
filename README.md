@@ -568,9 +568,9 @@
     </thead>
     <tbody>
         <tr>
-            <th>removeSubviews</th>
-            <th>true</th>
-            <th>dismiss，是否回收前景控件，拓展出来的子控件，不要动态设置改属性</th>
+            <td>removeSubviews</td>
+            <td>true</td>
+            <td>dismiss，是否回收前景控件，拓展出来的子控件，不要动态设置改属性</td>
         </tr>
         <tr>
             <td>coverClickable</td>
