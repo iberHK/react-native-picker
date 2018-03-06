@@ -77,7 +77,82 @@
         </tr>
     </tbody>
 </table>
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png)
+
+
+
+<code>SimpleItemsDialog:</code>
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+            <th>截图</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>items</td>
+            <td>['a', 'b', 'c']</td>
+            <td>列表数据，可以string、object(需要指定itemKey)</td>
+            <td rowspan="10">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td>itemKey</td>
+            <td>'key'</td>
+            <td>
+            当item为object时，来制定显示的属性
+            <code>items:[{id:0, value: 'v1'},{id:0, value: 'v1'}]</code>
+            <code>itemKey设为'value',则等同于<code>['v1', 'v2']</code>
+            </td>
+        </tr>
+        <tr>
+            <td>itemStyle</td>
+            <td>
+                <code>
+                    {
+                        fontSize: 14,
+                        fontWeight: '400',
+                        color: '#333333'
+                    }
+                </code>
+            </td>
+            <td>列表文字样式</td>
+        </tr>
+        <tr>
+            <td>cancel</td>
+            <td>true</td>
+            <td>是否在列表最后 增加 ‘取消’ 项</td>
+        </tr>
+        <tr>
+            <td>cancelText</td>
+            <td>'取消'</td>
+            <td>取消项文本</td>
+        </tr>
+        <tr>
+            <td>cancelTextStyle</td>
+            <td>
+                <code>
+                    {
+                        fontSize: 14,
+                        fontWeight: '400',
+                        color: '#999999'
+                    }
+                </code>
+            </td>
+            <td>取消文本字体样式</td>
+        </tr>
+        <tr>
+            <td>onPress</td>
+            <td>null</td>
+            <td>
+                返回选中index
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/choose.png)
