@@ -586,7 +586,7 @@
 </table>
 
 <br>
-<li>BaseComponent:</li>
+<li>PickerView:</li>
 <br>
 <table>
     <thead>
