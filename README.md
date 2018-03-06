@@ -23,8 +23,8 @@ AlertDialog:
             <td>messageText</td>
             <td>'Alert Message'</td>
             <td>消息文本</td>
-            <td width="25%" rowspan="9" colspan="2">
-            ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png)
+            <td rowspan="10">
+                ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png)
             </td>
         </tr>
         <tr>
