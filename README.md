@@ -421,6 +421,9 @@
             <td>itemTextColor</td>
             <td>0x333333ff</td>
             <td>item正常颜色，仅支持<code>16进制数字</code></td>
+            <td rowspan="12">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png"/>
+            </td>
         </tr>
         <tr>
             <td>itemSelectedColor</td>
@@ -544,7 +547,3 @@
         </tr>
     </tbody>
 </table>
-
-
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png)
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/xxx.png)
