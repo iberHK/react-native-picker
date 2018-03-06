@@ -60,9 +60,19 @@ export default class MainPage extends BaseComponent {
             {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
             {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
             {this.renderButton('DatePicker1', () => { this.DatePicker1.show() })}
-            <AlertDialog onPress={(isOK) => {
-                alert(isOK ? 'ok' : 'cancel');
-            }} ref={ref => this.AlertDialog = ref} />
+            <AlertDialog
+                messageText='Alert Message'
+                messageTextColor='#444444'
+                messageTextSize={this.getSize(14)}
+                negativeText='cancel'
+                negativeColor='#666666'
+                negativeSize={this.getSize(16)}
+                positiveText='ok'
+                positiveColor='#ff0000'
+                positiveSize={this.getSize(16)}
+                onPress={(isOK) => {
+                    alert(isOK ? 'ok' : 'cancel');
+                }} ref={ref => this.AlertDialog = ref} />
             <SimpleItemDialog ref={ref => this.SimpleItemDialog = ref}
                 onPress={(which) => {
                     alert(which)
