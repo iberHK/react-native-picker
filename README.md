@@ -24,7 +24,9 @@ AlertDialog:
             <td>'Alert Message'</td>
             <td>消息文本</td>
             <td rowspan="10">
+                <div>
                 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png)
+                </div>
             </td>
         </tr>
         <tr>
