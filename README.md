@@ -10,7 +10,7 @@
 
 ### 使用：
 <br>
-#####<li>AlertDialog:</li>
+#####AlertDialog:
 <br>
 <table>
     <thead>
@@ -82,7 +82,7 @@
 </table>
 
 <br>
-#####<li>SimpleItemsDialog:</li>
+#####SimpleItemsDialog:
 <br>
 <table>
     <thead>
@@ -154,7 +154,7 @@
 </table>
 
 <br>
-#####<li>SimpleChooseDialog:</li>
+#####SimpleChooseDialog:
 <br>
 <table>
     <thead>
@@ -242,7 +242,7 @@
 </table>
 
 <br>
-#####<li>InputDialog:</li>
+#####InputDialog:
 <br>
 <table>
     <thead>
@@ -324,7 +324,7 @@
 </table>
 
 <br>
-#####<li>AreaPicker:</li>
+#####AreaPicker:
 <br>
 <table>
     <thead>
@@ -408,7 +408,7 @@
 </table>
 
 <br>
-#####<li>DatePicker:</li>
+#####DatePicker:
 <br>
 <table>
     <thead>
@@ -556,7 +556,7 @@
 </table>
 
 <br>
-#####<li>BaseDialog:</li>
+#####BaseDialog:
 <br>
 <table>
     <thead>
@@ -586,7 +586,7 @@
 </table>
 
 <br>
-#####<li>PickerView:</li>
+#####PickerView:
 <br>
 <table>
     <thead>
