@@ -80,7 +80,7 @@
 
 
 
-<code>SimpleItemsDialog:</code>
+#<code>SimpleItemsDialog:</code>
 <table>
     <thead>
         <tr>
