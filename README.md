@@ -447,7 +447,11 @@
         </tr>
         <tr>
             <td>selectedValue</td>
-            <td>[new Date().getFullYear() + '年', new Date().getMonth() + 1 + '月', new Date().getDate() + '日']</td>
+            <td>[
+                new Date().getFullYear() + '年', <br>
+                new Date().getMonth() + 1 + '月',<br>
+                new Date().getDate() + '日']
+            </td>
             <td>选中</td>
         </tr>
         <tr>
