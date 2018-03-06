@@ -21,7 +21,7 @@ import PickerView from './view/PickerView';
 
 import SimpleChooseDialog from './view/SimpleChooseDialog';
 
-import SimpleItemDialog from './view/SimpleItemDialog';
+import SimpleItemsDialog from './view/SimpleItemsDialog';
 
 import BaseComponent from './view/BaseComponent';
 
@@ -53,7 +53,7 @@ export default class MainPage extends BaseComponent {
             backgroundColor: '#f9fafb', justifyContent: 'center', alignItems: 'center'
         }}>
             {this.renderButton('AlertDialog', () => { this.AlertDialog.show() })}
-            {this.renderButton('SimpleItemDialog', () => { this.SimpleItemDialog.show() })}
+            {this.renderButton('SimpleItemsDialog', () => { this.SimpleItemsDialog.show() })}
             {this.renderButton('SimpleChooseDialog', () => { this.SimpleChooseDialog.show() })}
             {this.renderButton('InputDialog', () => { this.InputDialog.show() })}
             {this.renderButton('最简单的自定义picker', () => { this.CustomPicker.show() })}
@@ -61,19 +61,13 @@ export default class MainPage extends BaseComponent {
             {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
             {this.renderButton('DatePicker1', () => { this.DatePicker1.show() })}
             <AlertDialog
-                messageText='Alert Message'
-                messageTextColor='#444444'
-                messageTextSize={this.getSize(14)}
-                negativeText='cancel'
-                negativeColor='#666666'
-                negativeSize={this.getSize(16)}
-                positiveText='ok'
-                positiveColor='#ff0000'
-                positiveSize={this.getSize(16)}
                 onPress={(isOK) => {
                     alert(isOK ? 'ok' : 'cancel');
                 }} ref={ref => this.AlertDialog = ref} />
-            <SimpleItemDialog ref={ref => this.SimpleItemDialog = ref}
+            <SimpleItemsDialog
+                items={[{ value: 1 }, { value: 2 }, { value: 3 }]}
+                itemKey='value'
+                ref={ref => this.SimpleItemsDialog = ref}
                 onPress={(which) => {
                     alert(which)
                 }} />

@@ -18,9 +18,20 @@ class SimpleChooseDialog extends BaseDialog {
 
     static defaultProps = {
         items: ['a', 'b', 'c'],
-        onPress: null,
-        selectColor: '#ff0000',
+        itemKey: 'key',
+        itemStyle: {
+            fontSize: 14,
+            fontWeight: '400',
+            color: '#333333'
+        },
+        selectColor: '#1097D5',
         normalColor: '#666666',
+        pointSize: 18,
+        pointBorderRadius: 9,
+        confirmText: '确定',
+        confirmButtonColor: '#1097D5',
+        confirmTextColor: '#ffffff',
+        onPress: null,
     }
 
     constructor(props) {
@@ -40,15 +51,18 @@ class SimpleChooseDialog extends BaseDialog {
                     justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row'
                 }}>
                 <View style={{
-                    width: this.getSize(18), height: this.getSize(18), justifyContent: 'center', alignItems: 'center',
-                    borderRadius: this.getSize(18) / 2, borderColor: this.state.seleted == index ? this.props.selectColor : this.props.normalColor, borderWidth: 1, marginRight: this.getSize(20)
+                    width: this.props.pointSize, height: this.props.pointSize,
+                    justifyContent: 'center', alignItems: 'center', marginRight: this.getSize(20),
+                    borderRadius: this.props.pointBorderRadius, borderWidth: 1,
+                    borderColor: this.state.seleted == index ? this.props.selectColor : this.props.normalColor,
                 }}>
                     {this.state.seleted == index ? <View style={{
-                        width: this.getSize(10), height: this.getSize(10), borderRadius: this.getSize(10) / 2,
+                        width: this.props.pointSize * 0.6, height: this.props.pointSize * 0.6,
+                        borderRadius: this.props.pointBorderRadius * 0.6,
                         backgroundColor: this.props.selectColor
                     }} /> : null}
                 </View>
-                <Text style={{ fontSize: this.getSize(14), fontWeight: '400', color: '#333333' }}>{this.key ? item[this.key] : item}</Text>
+                <Text style={[this.props.itemStyle, this.state.seleted == index ? { color: this.props.selectColor } : {}]}>{typeof item == 'string' ? item : item[this.props.itemKey]}</Text>
             </TouchableOpacity>
         })
     }
@@ -70,10 +84,10 @@ class SimpleChooseDialog extends BaseDialog {
                 }}
                 style={{
                     width: this.getSize(200), height: this.getSize(44),
-                    backgroundColor: this.props.selectColor, borderRadius: this.getSize(5),
+                    backgroundColor: this.props.confirmButtonColor, borderRadius: this.getSize(5),
                     justifyContent: 'center', alignItems: 'center', marginTop: this.getSize(13), marginBottom: this.getSize(20)
                 }}>
-                <Text style={{ color: '#000000', fontSize: this.getSize(16), fontWeight: '400' }}>確定</Text>
+                <Text style={{ color: this.props.confirmTextColor, fontSize: this.getSize(16), fontWeight: '400' }}>{this.props.confirmText}</Text>
             </TouchableOpacity>
         </View >
     }

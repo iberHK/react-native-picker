@@ -16,11 +16,11 @@ import TimeUtils from '../utils/TimeUtils';
 class DatePicker extends BaseDialog {
 
     static defaultProps = {
+        removeSubviews: false,
         unit: ['年', '月', '日'],
         selectedValue: [new Date().getFullYear() + '年', new Date().getMonth() + 1 + '月', new Date().getDate() + '日'],
         startYear: 1990,
         endYear: new Date().getFullYear(),
-        removeSubviews: false,
         pickerCancelBtnText: '取消',
         pickerAcceptBtnText: '确定',
         itemHeight: 40,
@@ -29,7 +29,7 @@ class DatePicker extends BaseDialog {
         onBackgroundClickCallback: null,
         HH: true,
         mm: true,
-        ss: true
+        ss: true,
     }
 
     constructor(props) {

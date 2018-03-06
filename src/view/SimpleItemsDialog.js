@@ -11,23 +11,34 @@ import {
 
 import BaseDialog from './BaseDialog';
 
-class SimpleItemDialog extends BaseDialog {
+class SimpleItemsDialog extends BaseDialog {
 
     static defaultProps = {
         items: ['a', 'b', 'c'],
+        itemKey: 'key',
+        itemStyle: {
+            fontSize: 14,
+            fontWeight: '400',
+            color: '#333333'
+        },
+        cancel: true,
+        cancelText: '取消',
+        cancelTextStyle: {
+            fontSize: 14,
+            fontWeight: '400',
+            color: '#999999'
+        },
         onPress: null,
-        cancel: true
     }
 
     constructor(props) {
         super(props);
     }
 
-
-    setCancelable(enable) {
-        this.cancel = enable;
-        return this;
+    _getContentPosition() {
+        return { justifyContent: 'flex-end', alignItems: 'center' }
     }
+
 
     renderItems() {
         return this.props.items.map((item, index) => {
@@ -39,9 +50,9 @@ class SimpleItemDialog extends BaseDialog {
                         }
                     });
                 }}
-                key={this.key ? item[this.key] : item}
+                key={index}
                 style={{ width: this.mScreenWidth, height: this.getSize(49), justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ fontSize: this.getSize(14), fontWeight: '400', color: '#333333' }}>{this.key ? item[this.key] : item}</Text>
+                <Text style={this.props.itemStyle}>{typeof item == 'string' ? item : item[this.props.itemKey]}</Text>
                 <View style={{ position: 'absolute', bottom: 0, width: this.mScreenWidth, height: this.mOnePixel, backgroundColor: '#E8EEF0' }} />
             </TouchableOpacity>
         })
@@ -51,13 +62,9 @@ class SimpleItemDialog extends BaseDialog {
         return <TouchableOpacity
             onPress={() => this.dismiss()}
             style={{ width: this.mScreenWidth, height: this.getSize(49), justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ fontSize: this.getSize(14), fontWeight: '400', color: '#999999' }}>取消</Text>
+            <Text style={this.props.cancelTextStyle}>{this.props.cancelText}</Text>
             <View style={{ position: 'absolute', bottom: 0, width: this.mScreenWidth, height: this.mOnePixel, backgroundColor: '#E8EEF0' }} />
         </TouchableOpacity>
-    }
-
-    _getContentPosition() {
-        return { justifyContent: 'flex-end', alignItems: 'center' }
     }
 
     renderContent() {
@@ -68,4 +75,4 @@ class SimpleItemDialog extends BaseDialog {
     }
 }
 
-export default SimpleItemDialog;
+export default SimpleItemsDialog;

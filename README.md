@@ -151,7 +151,93 @@
 </table>
 
 
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/choose.png)
+<code>SimpleChooseDialog:</code>
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+            <th>截图</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>items</td>
+            <td>['a', 'b', 'c']</td>
+            <td>列表数据，可以string、object(需要指定itemKey)</td>
+            <td rowspan="10">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/simplechoosedialog.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td>itemKey</td>
+            <td>'key'</td>
+            <td>
+                当item为object时，来指定显示的属性<br>
+                <code>items:[{id:0, value: 'v1'},{id:0, value: 'v1'}]</code><br>
+                <code>itemKey设为'value',则等同于<code>['v1', 'v2']</code><br>
+            </td>
+        </tr>
+        <tr>
+            <td>itemStyle</td>
+            <td>
+                    {<br>
+                        fontSize: 14,<br>
+                        fontWeight: '400',<br>
+                        color: '#333333'<br>
+                    }
+            </td>
+            <td>列表文字样式</td>
+        </tr>
+        <tr>
+            <td>selectColor</td>
+            <td>'#1097D5'</td>
+            <td>选中颜色</td>
+        </tr>
+        <tr>
+            <td>normalColor</td>
+            <td>'#666666'</td>
+            <td>未选中颜色</td>
+        </tr>
+        <tr>
+            <td>pointSize</td>
+            <td>18</td>
+            <td>左侧选中标识大小</td>
+        </tr>
+        <tr>
+            <td>pointBorderRadius</td>
+            <td>9</td>
+            <td>左侧选中标识边框弧度</td>
+        </tr>
+        <tr>
+            <td>confirmText</td>
+            <td>'确定'</td>
+            <td>确定选择文本</td>
+        </tr>
+        <tr>
+            <td>confirmButtonColor</td>
+            <td>'#1097D5'</td>
+            <td>确定选择按钮颜色</td>
+        </tr>
+        <tr>
+            <td>confirmTextColor</td>
+            <td>'#ffffff'</td>
+            <td>确定选择文本颜色</td>
+        </tr>
+        <tr>
+            <td>onPress</td>
+            <td>null</td>
+            <td>
+                返回选中index
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/simplechoosedialog.png)
+
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/input.png)
 
 
