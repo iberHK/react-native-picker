@@ -15,7 +15,13 @@ import BaseComponent from './BaseComponent';
  */
 export default class BaseDialog extends BaseComponent {
 
+    static defaultProps = {
+        removeSubviews: null,
+        bgCloseable: true
+    }
+
     _path = new Animated.Value(0);
+
 
     constructor(props) {
         super(props);

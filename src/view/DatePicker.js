@@ -17,19 +17,28 @@ class DatePicker extends BaseDialog {
 
     static defaultProps = {
         removeSubviews: false,
+        itemTextColor: 0x333333ff,
+        itemSelectedColor: 0x1097D5ff,
+        onPickerCancel: null,
+        onPickerConfirm: null,
         unit: ['年', '月', '日'],
         selectedValue: [new Date().getFullYear() + '年', new Date().getMonth() + 1 + '月', new Date().getDate() + '日'],
         startYear: 1990,
         endYear: new Date().getFullYear(),
-        pickerCancelBtnText: '取消',
-        pickerAcceptBtnText: '确定',
+
+        confirmText: '确定',
+        confirmTextSize: 14,
+        confirmTextColor: '#333333',
+
+        cancelText: '取消',
+        cancelTextSize: 14,
+        cancelTextColor: '#333333',
+
         itemHeight: 40,
-        onCancelCallback: null,
-        onAcceptCallback: null,
-        onBackgroundClickCallback: null,
+
         HH: true,
         mm: true,
-        ss: true
+        ss: false
     }
 
     constructor(props) {
@@ -136,39 +145,13 @@ class DatePicker extends BaseDialog {
         return { justifyContent: 'flex-end', alignItems: 'center' }
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        if (nextState) {
-            return true;
-        }
-        if (JSON.stringify(nextProps.unit) != JSON.stringify(this.props.unit)) {
-            return true;
-        } else if (JSON.stringify(nextProps.selectedValue) != JSON.stringify(this.props.selectedValue)) {
-            return true;
-        } else if (this.props.startYear != nextProps.startYear) {
-            return true;
-        } else if (this.props.endYear != nextProps.endYear) {
-            return true;
-        } else if (this.props.removeSubviews != nextProps.removeSubviews) {
-            return true;
-        } else if (this.props.pickerCancelBtnText != nextProps.pickerCancelBtnText) {
-            return true;
-        } else if (this.props.pickerAcceptBtnText != nextProps.pickerAcceptBtnText) {
-            return true;
-        } else if (this.props.itemHeight != nextProps.itemHeight) {
-            return true;
-        } else if (this.props.onCancelCallback != nextProps.onCancelCallback) {
-            return true;
-        } else if (this.props.onAcceptCallback != nextProps.onAcceptCallback) {
-            return true;
-        }
-        return false;
-    }
-
     renderPicker() {
         return this.state.pickerData.map((item, pickerId) => {
             if (item) {
                 return <PickerView
                     key={'picker' + pickerId}
+                    itemTextColor={this.props.itemTextColor}
+                    itemSelectedColor={this.props.itemSelectedColor}
                     list={item}
                     onPickerSelect={(toValue) => {
                         //是否联动的实现位置
@@ -202,17 +185,17 @@ class DatePicker extends BaseDialog {
             }}>
                 <TouchableOpacity
                     onPress={() => {
-                        this.dismiss(() => this.props.onCancelCallback && this.props.onCancelCallback(this.props.selectedValue));
+                        this.dismiss(() => this.props.onPickerCancel && this.props.onPickerCancel(this.props.selectedValue));
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>{this.props.pickerCancelBtnText}</Text>
+                    <Text style={{ fontSize: this.props.cancelTextSize, fontWeight: '400', color: this.props.cancelTextColor }}>{this.props.cancelText}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
-                        this.dismiss(() => this.props.onAcceptCallback && this.props.onAcceptCallback(this.props.selectedValue));
+                        this.dismiss(() => this.props.onPickerConfirm && this.props.onPickerConfirm(this.props.selectedValue));
                     }}
                     style={{ width: this.getSize(60), height: this.getSize(44), justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: this.getSize(16), fontWeight: '400', color: '#333333' }}>{this.props.pickerAcceptBtnText}</Text>
+                    <Text style={{ fontSize: this.props.confirmTextSize, fontWeight: '400', color: this.props.confirmTextColor }}>{this.props.confirmText}</Text>
                 </TouchableOpacity>
             </View>
         </View>

@@ -16,6 +16,7 @@ import BaseDialog from './BaseDialog';
 class AreaPicker extends BaseDialog {
 
     static defaultProps = {
+        removeSubviews: false,
         selectedValue: ['香港', '香港', '中西區'],
         areaJson: null,
         confirmText: '确定',
@@ -26,6 +27,7 @@ class AreaPicker extends BaseDialog {
         cancelTextColor: '#333333',
         itemTextColor: 0x333333ff,
         itemSelectedColor: 0x1097D5ff,
+        itemHeight: 40,
         onPickerCancel: null,
         onPickerConfirm: null
     }
@@ -127,7 +129,7 @@ class AreaPicker extends BaseDialog {
                     selectedIndex={selectedIndex}
                     fontSize={this.getSize(14)}
                     itemWidth={this.mScreenWidth / this.state.pickerData.length}
-                    itemHeight={this.getSize(40)} />
+                    itemHeight={this.props.itemHeight} />
             } else {
                 return null;
             }
@@ -137,10 +139,10 @@ class AreaPicker extends BaseDialog {
     renderContent() {
         return <View
             style={{
-                height: this.getSize(40) * 5 + this.getSize(15) + this.getSize(44), width: this.mScreenWidth,
+                height: this.props.itemHeight * 5 + this.getSize(15) + this.getSize(44), width: this.mScreenWidth,
                 backgroundColor: '#ffffff'
             }}>
-            <View style={{ width: this.mScreenWidth, height: this.getSize(40) * 5 + this.getSize(15), flexDirection: 'row', position: 'absolute', bottom: 0 }}>
+            <View style={{ width: this.mScreenWidth, height: this.props.itemHeight * 5 + this.getSize(15), flexDirection: 'row', position: 'absolute', bottom: 0 }}>
                 {this.renderPicker()}
             </View>
             <View style={{

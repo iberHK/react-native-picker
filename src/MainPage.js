@@ -11,7 +11,7 @@ import AlertDialog from './view/AlertDialog';
 
 import AreaPicker from './view/AreaPicker';
 
-import CustomPicker from './view/CustomPicker';
+import CustomPicker from './CustomPicker';
 
 import DatePicker from './view/DatePicker';
 
@@ -88,10 +88,10 @@ export default class MainPage extends BaseComponent {
             <DatePicker
                 unit={this.state.unit}
                 startYear={this.state.startYear}
-                onAcceptCallback={(value) => {
+                onPickerConfirm={(value) => {
                     alert(JSON.stringify(value))
                 }}
-                onCancelCallback={() => {
+                onPickerCancel={() => {
                     alert('cancel')
                 }}
                 ref={ref => this.DatePicker = ref} />
@@ -101,10 +101,10 @@ export default class MainPage extends BaseComponent {
                 ss={false}
                 unit={this.state.unit}
                 startYear={this.state.startYear}
-                onAcceptCallback={(value) => {
+                onPickerConfirm={(value) => {
                     alert(JSON.stringify(value))
                 }}
-                onCancelCallback={() => {
+                onPickerCancel={() => {
                     alert('cancel')
                 }}
                 ref={ref => this.DatePicker1 = ref} />

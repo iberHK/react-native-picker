@@ -11,9 +11,9 @@ import {
     PixelRatio
 } from 'react-native';
 
-import BaseDialog from './BaseDialog';
+import BaseDialog from './view/BaseDialog';
 
-import PickerView from './PickerView';
+import PickerView from './view/PickerView';
 
 export default class CustomPicker extends BaseDialog {
 
