@@ -7,6 +7,37 @@
 
 欢迎直接下载代码删改使用，欢迎沟通了解实现原理，有帮得上的，记得给星哦~
 
+<table border="1 " width="200 ">
+    <thead>
+    <tr>
+        <td colspan="4">ss</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td width="25%">1</td>
+        <td width="25%">2</td>
+        <td width="25%" rowspan="5" colspan="2">3</td>
+    </tr>
+    <tr>
+        <td width="25%">4</td>
+        <td width="25%"></td>
+    </tr>
+    <tr>
+        <td width="25%"> 　</td>
+        <td width="25%"> 　</td>
+    </tr>
+    <tr>
+        <td width="25%"> 　</td>
+        <td width="25%"> 　</td>
+    </tr>
+    <tr>
+        <td width="25% "> 　</td>
+        <td width="25% "> 　</td>
+    </tr>
+    </tbody>
+</table>
+
 AlertDialog:
 
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png)
