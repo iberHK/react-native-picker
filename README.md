@@ -7,7 +7,7 @@
 
 欢迎直接下载代码删改使用，欢迎沟通了解实现原理，有帮得上的，记得给星哦~
 
-<code>AlertDialog:</code>
+<code>AlertDialog:
 
 <table>
     <thead>
@@ -77,7 +77,7 @@
         </tr>
     </tbody>
 </table>
-
+</code>
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png)
 
 
