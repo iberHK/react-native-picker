@@ -9,15 +9,12 @@ import {
 
 import BaseComponent from './BaseComponent';
 
-/**
- * Compnent基類,
- * 父類
- */
 export default class BaseDialog extends BaseComponent {
 
     static defaultProps = {
-        removeSubviews: null,
-        bgCloseable: true
+        removeSubviews: true,   //隐藏时，是否回收前景控件
+        coverClickable: true,
+        onCoverPress: null
     }
 
     _path = new Animated.Value(0);
@@ -69,7 +66,9 @@ export default class BaseDialog extends BaseComponent {
     }
 
 
-    //  前景位置
+    /**
+     * 前景位置
+     */
     _getContentPosition() {
         return { justifyContent: 'center', alignItems: 'center' }
     }
@@ -103,8 +102,8 @@ export default class BaseDialog extends BaseComponent {
                 }}>
                 <TouchableOpacity
                     onPress={() => {
-                        if (!this.props || (this.props.bgCloseable || this.props.bgCloseable == null)) {
-                            this.dismiss();
+                        if (!this.props || (this.props.coverClickable || this.props.coverClickable == null)) {
+                            this.dismiss(this.props.onCoverPress);
                         }
                     }}
                     style={{ position: 'absolute', width: this.mScreenWidth, height: this.mScreenHeight }} />

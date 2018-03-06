@@ -153,7 +153,7 @@ class DatePicker extends BaseDialog {
                     itemTextColor={this.props.itemTextColor}
                     itemSelectedColor={this.props.itemSelectedColor}
                     list={item}
-                    onPickerSelect={(toValue) => {
+                    onPickerSelected={(toValue) => {
                         //是否联动的实现位置
                         this.props.selectedValue[pickerId] = toValue;
                         console.log('====')

@@ -21,7 +21,10 @@ class PickerView extends BaseComponent {
 
     static defaultProps = {
         itemTextColor: 0x333333ff,
-        itemSelectedColor: 0x1097D5ff
+        itemSelectedColor: 0x1097D5ff,
+        itemHeight: 40,
+        onPickerSelected: null,
+        selectedIndex: 0
     }
 
     _previousTop = 0;
@@ -220,7 +223,7 @@ class PickerView extends BaseComponent {
                     item.setValue(0);
                 }
             })
-            this.props.onPickerSelect && this.props.onPickerSelect(this.state.list[selectedIndex]);
+            this.props.onPickerSelected && this.props.onPickerSelected(this.state.list[selectedIndex]);
         }, 20));
     }
 

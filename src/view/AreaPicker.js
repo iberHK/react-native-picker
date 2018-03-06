@@ -122,7 +122,7 @@ class AreaPicker extends BaseDialog {
                     itemSelectedColor={this.props.itemSelectedColor}
                     key={'picker' + pickerId}
                     list={item}
-                    onPickerSelect={(toValue) => {
+                    onPickerSelected={(toValue) => {
                         this.props.selectedValue[pickerId] = toValue;
                         this.setState({ ...this.formatPickerData(this.props.selectedValue) });
                     }}

@@ -554,3 +554,68 @@
         </tr>
     </tbody>
 </table>
+
+<br>
+<li>BaseDialog:</li>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>removeSubviews</th>
+            <th>true</th>
+            <th>dismiss，是否回收前景控件，拓展出来的子控件，不要动态设置改属性</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>coverClickable</td>
+            <td>ture</td>
+            <td>背景点击隐藏</td>
+        </tr>
+        <tr>
+            <td>onCoverPress</td>
+            <td>null</td>
+            <td>点击背景，dismiss回调</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<li>BaseComponent:</li>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>itemTextColor</th>
+            <th>0x333333ff</th>
+            <th>dismiss，是否回收前景控件，拓展出来的子控件，不要动态设置改属性</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>itemTextColor</td>
+            <td>0x333333ff</td>
+            <td>item正常颜色，仅支持<code>16进制数字</code></td>
+        </tr>
+        <tr>
+            <td>itemSelectedColor</td>
+            <td>0x1097D5ff</td>
+            <td>item选择颜色，仅支持<code>16进制数字</code></td>
+        </tr>
+        <tr>
+            <td>itemHeight</td>
+            <td>40</td>
+            <td>item高度</td>
+        </tr>
+        <tr>
+            <td>onPickerSelected</td>
+            <td>null</td>
+            <td>选中时回掉</td>
+        </tr>
+        <tr>
+            <td>selectedIndex</td>
+            <td>0</td>
+            <td>选中</td>
+        </tr>
+    </tbody>
+</table>

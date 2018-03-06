@@ -36,7 +36,7 @@ export default class CustomPicker extends BaseDialog {
         }}>
             <PickerView
                 list={this.props.list}
-                onPickerSelect={(toValue) => {
+                onPickerSelected={(toValue) => {
                     // console.warn(toValue)
                 }}
                 selectedIndex={0}
@@ -45,7 +45,7 @@ export default class CustomPicker extends BaseDialog {
                 itemHeight={this.getSize(40)} />
             <PickerView
                 list={this.props.list1}
-                onPickerSelect={(toValue) => {
+                onPickerSelected={(toValue) => {
                     // console.warn(toValue)
                 }}
                 selectedIndex={0}
