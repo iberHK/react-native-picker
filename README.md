@@ -238,7 +238,88 @@
 </table>
 
 
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/input.png)
+<code>SimpleChooseDialog:</code>
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+            <th>截图</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>title</td>
+            <td>'我要举报'</td>
+            <td>标题文本</td>
+            <td rowspan="11">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/inputdialog.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td>titleSize</td>
+            <td>16</td>
+            <td>标题文本字体大小</td>
+        </tr>
+        <tr>
+            <td>titleColor</td>
+            <td>'#333333'</td>
+            <td>标题文本文本颜色</td>
+        </tr>
+        <tr>
+            <td>cancelText</td>
+            <td>'返回'</td>
+            <td>取消文本</td>
+        </tr>
+        <tr>
+            <td>cancelSize</td>
+            <td>14</td>
+            <td>取消文本字体大小</td>
+        </tr>
+        <tr>
+            <td>cancelColor</td>
+            <td>'#333333'</td>
+            <td>取消文本字体颜色</td>
+        </tr>
+        <tr>
+            <td>btnText</td>
+            <td>'提交'</td>
+            <td>提交文本</td>
+        </tr>
+        <tr>
+            <td>btnTextSize</td>
+            <td>12</td>
+            <td>提交文本字体大小</td>
+        </tr>
+        <tr>
+            <td>btnTextColor</td>
+            <td>'#ffffff'</td>
+            <td>提交文本字体颜色</td>
+        </tr>
+        <tr>
+            <td>btnBgColor</td>
+            <td>'#1097D5'</td>
+            <td>提交按钮颜色</td>
+        </tr>
+        <tr>
+            <td>placeholder</td>
+            <td>'请尽量说明问题，我们将尽快处理...'</td>
+            <td>输入框提示语</td>
+        </tr>
+        <tr>
+            <td>onSubmit</td>
+            <td>null</td>
+            <td>
+                返回输入的文本内容
+            </td>
+        </tr>
+        <tr>InputDialog.show(text(输入框文字))</tr>
+    </tbody>
+</table>
+
+
+![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/inputdialog.png)
 
 
 ![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/customer.png)

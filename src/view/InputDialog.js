@@ -19,7 +19,17 @@ class InputDialog extends BaseDialog {
 
     static defaultProps = {
         removeSubviews: false,
-        btnColor: '#ff0000',
+        title: '我要举报',
+        titleSize: 16,
+        titleColor: '#333333',
+        cancelText: '返回',
+        cancelSize: 14,
+        cancelColor: '#333333',
+        btnText: '提交',
+        btnTextSize: 12,
+        btnTextColor: '#ffffff',
+        btnBgColor: '#1097D5',
+        placeholder: '请尽量说明问题，我们将尽快处理...',
         onSubmit: null
     }
 
@@ -31,14 +41,14 @@ class InputDialog extends BaseDialog {
         return { justifyContent: 'flex-end', alignItems: 'center' }
     }
 
-    show() {
+    show(text) {
         super.show(() => {
-            this.text.focus();
-        }, null);
+            this.textInput.focus();
+        }, { text: text });
     }
 
     dismiss(callback) {
-        this.text.blur();
+        this.textInput.blur();
         super.dismiss(callback);
     }
 
@@ -56,11 +66,11 @@ class InputDialog extends BaseDialog {
                         height: this.getSize(40), flexDirection: 'row',
                         justifyContent: 'center', alignItems: 'center', marginLeft: this.getSize(5)
                     }}>
-                    <Text style={{ fontSize: this.getSize(14), color: '#333333', marginLeft: this.getSize(5) }}>返回</Text>
+                    <Text style={{ fontSize: this.props.cancelSize, color: this.props.cancelColor, marginLeft: this.getSize(5) }}>{this.props.cancelText}</Text>
                 </TouchableOpacity>
-                <Text style={{ position: 'absolute', fontSize: this.getSize(16), color: '#333333', fontWeight: '600' }}>我要举报</Text>
+                <Text style={{ position: 'absolute', fontSize: this.props.titleSize, color: this.props.titleColor, fontWeight: '600' }}>{this.props.title}</Text>
             </View>
-            <TextInput ref={ref => this.text = ref}
+            <TextInput ref={ref => this.textInput = ref}
                 style={{
                     width: this.getSize(345), marginLeft: this.getSize(15),
                     height: this.getSize(100), color: '#333333', fontSize: this.getSize(14),
@@ -71,7 +81,7 @@ class InputDialog extends BaseDialog {
                 multiline={true}
                 value={this.state.text}
                 underlineColorAndroid={'transparent'}
-                placeholder={'请具体说明问题，我们将尽快处理...'}
+                placeholder={this.props.placeholder}
                 placeholderTextColor='#999999'
                 onChangeText={(text) => {
                     this.setState({ text: text })
@@ -87,9 +97,9 @@ class InputDialog extends BaseDialog {
                     style={{
                         width: this.getSize(60), height: this.getSize(28),
                         justifyContent: 'center', alignItems: 'center',
-                        backgroundColor: this.props.btnColor, borderRadius: this.getSize(4)
+                        backgroundColor: this.props.btnBgColor, borderRadius: this.getSize(4)
                     }}>
-                    <Text style={{ fontSize: this.getSize(12), color: '#ffffff' }}>完成</Text>
+                    <Text style={{ fontSize: this.props.btnTextSize, color: this.props.btnTextColor }}>{this.props.btnText}</Text>
                 </TouchableOpacity>
             </View>
             <KeyboardSpacer />
