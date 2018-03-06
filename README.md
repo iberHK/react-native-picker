@@ -5,8 +5,9 @@
 ![img](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/demo.gif)
 
 ### 安装：
-<code>yarn add react-native-svg</code><br>
 <code>yarn add react-native-pickers</code><br>
+<code>yarn add react-native-svg</code><br>
+<code>react-native link react-native-svg</code><br>
 
 ### 使用：
 <li>AlertDialog:</li>
