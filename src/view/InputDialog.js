@@ -42,9 +42,8 @@ class InputDialog extends BaseDialog {
     }
 
     show(text) {
-        super.show(() => {
-            this.textInput.focus();
-        }, { text: text });
+        super.show(null, { text: text });
+        this.textInput.focus();
     }
 
     dismiss(callback) {
