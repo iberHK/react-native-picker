@@ -9,7 +9,9 @@
 <code>yarn add react-native-pickers</code><br>
 
 ### 使用：
-######AlertDialog:
+<br>
+<li>AlertDialog:</li>
+<br>
 <table>
     <thead>
         <tr>
@@ -80,7 +82,7 @@
 </table>
 
 <br>
-######SimpleItemsDialog:
+<li>SimpleItemsDialog:</li>
 <br>
 <table>
     <thead>
@@ -152,7 +154,7 @@
 </table>
 
 <br>
-######SimpleChooseDialog:
+<li>SimpleChooseDialog:</li>
 <br>
 <table>
     <thead>
@@ -240,7 +242,7 @@
 </table>
 
 <br>
-######InputDialog:
+<li>InputDialog:</li>
 <br>
 <table>
     <thead>
@@ -322,7 +324,7 @@
 </table>
 
 <br>
-######AreaPicker:
+<li>AreaPicker:</li>
 <br>
 <table>
     <thead>
@@ -406,7 +408,7 @@
 </table>
 
 <br>
-######DatePicker:
+<li>DatePicker:</li>
 <br>
 <table>
     <thead>
@@ -554,7 +556,7 @@
 </table>
 
 <br>
-######BaseDialog:
+<li>BaseDialog:</li>
 <br>
 <table>
     <thead>
@@ -584,7 +586,7 @@
 </table>
 
 <br>
-######PickerView:
+<li>PickerView:</li>
 <br>
 <table>
     <thead>
