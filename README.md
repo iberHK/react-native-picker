@@ -561,12 +561,17 @@
 <table>
     <thead>
         <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
             <th>removeSubviews</th>
             <th>true</th>
             <th>dismiss，是否回收前景控件，拓展出来的子控件，不要动态设置改属性</th>
         </tr>
-    </thead>
-    <tbody>
         <tr>
             <td>coverClickable</td>
             <td>ture</td>
@@ -586,9 +591,9 @@
 <table>
     <thead>
         <tr>
-            <th>itemTextColor</th>
-            <th>0x333333ff</th>
-            <th>dismiss，是否回收前景控件，拓展出来的子控件，不要动态设置改属性</th>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
         </tr>
     </thead>
     <tbody>
