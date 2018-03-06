@@ -9,7 +9,7 @@
 
 AlertDialog:
 
-![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/alert.png)
+![image](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png)
 
 <table>
     <thead>
