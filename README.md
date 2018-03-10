@@ -1,5 +1,6 @@
 # react-native-pickers
-纯JS实现Picker，还是有点难度的，需要涉及到RN的性能优化、自定义手势、自定义点击以及动画等。<br>
+纯JS实现Picker，还是有点难度的，需要涉及到RN的性能优化（联动不能使用setState来更新）、
+自定义手势、自定义点击以及动画等。<br>
 其他Dialog只是Picker是基于项目的BaseDialog扩展来的，就一并整理发布。<br>
 随手给颗星星呗，有bug或者交流，欢迎留言第一时间维护。<br>
 
