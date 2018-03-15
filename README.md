@@ -576,7 +576,7 @@
             <td>title</td>
             <td>'视频下载'</td>
             <td>标题文本</td>
-            <td rowspan="12">
+            <td rowspan="9">
                 <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/downloaddialog.gif"/>
             </td>
         </tr>
