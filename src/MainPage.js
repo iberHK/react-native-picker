@@ -17,7 +17,8 @@ import {
     PickerView,
     SimpleChooseDialog,
     SimpleItemsDialog,
-    AlertDialog
+    AlertDialog,
+    DownloadDialog
 } from 'react-native-pickers';
 
 import AreaJson from './Area.json';
@@ -28,8 +29,25 @@ export default class MainPage extends BaseComponent {
         super(props);
         this.state = {
             unit: ['年', '月', '日'],
-            startYear: 1900
+            startYear: 1900,
+            active: false
         }
+    }
+
+    startDownload() {
+        let count = 0;
+        this.setState({ active: false })
+        let interval = setInterval(() => {
+            if (count > 100) {
+                //下载完成
+                this.setState({ active: true })
+                clearInterval(interval);
+                return;
+            }
+            this.DownloadDialog.setProcess(count / 100, '4.23MB');
+            count++;
+            count++;
+        }, 100);
     }
 
     renderButton(text, callback) {
@@ -57,6 +75,10 @@ export default class MainPage extends BaseComponent {
             {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
             {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
             {this.renderButton('DatePicker1', () => { this.DatePicker1.show() })}
+            {this.renderButton('下载进度', () => {
+                this.DownloadDialog.show();
+                this.startDownload();
+            })}
             <AlertDialog
                 onPress={(isOK) => {
                     alert(isOK ? 'ok' : 'cancel');
@@ -103,6 +125,10 @@ export default class MainPage extends BaseComponent {
                     alert('cancel')
                 }}
                 ref={ref => this.DatePicker1 = ref} />
+            <DownloadDialog
+                active={this.state.active}
+                onAction={() => { alert('打开') }}
+                ref={ref => this.DownloadDialog = ref} />
         </View>
     }
 
