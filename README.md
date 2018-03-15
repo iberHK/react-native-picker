@@ -627,3 +627,63 @@
         </tr>
     </tbody>
 </table>
+
+<br>
+<li>DownloadDialog:</li>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+            <th>截图</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>title</td>
+            <td>'视频下载'</td>
+            <td>标题文本</td>
+            <td rowspan="12">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/inputdialog.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td>titleSize</td>
+            <td>16</td>
+            <td>标题文本字体大小</td>
+        </tr>
+        <tr>
+            <td>titleColor</td>
+            <td>'#333333'</td>
+            <td>标题文本文本颜色</td>
+        </tr>
+        <tr>
+            <td>active</td>
+            <td>false</td>
+            <td>按钮是否可点击</td>
+        </tr>
+        <tr>
+            <td>actionText</td>
+            <td>'打开'</td>
+            <td>按钮文本</td>
+        </tr>
+        <tr>
+            <td>onAction</td>
+            <td>null</td>
+            <td>点击按钮回调</td>
+        </tr>
+        <tr>
+            <td>totalTextColor</td>
+            <td>'#666666'</td>
+            <td>总数文本字体颜色</td>
+        </tr>
+        <tr>
+            <td>totalTextSize</td>
+            <td>12</td>
+            <td>总数文本字体大小</td>
+        </tr>
+        <tr><td colspan="4">InputDialog.show(text)，显示dialog，text：用于编辑时，设置前值</td></tr>
+    </tbody>
+</table>
