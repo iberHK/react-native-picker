@@ -619,6 +619,67 @@
     </tbody>
 </table>
 
+
+<br>
+<li>ToastComponent:</li>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+            <th>截图</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>duration</td>
+            <td>1500</td>
+            <td>显示时长（自动隐藏）</td>
+            <td rowspan="9">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/toast.gif"/>
+            </td>
+        </tr>
+        <tr>
+            <td>fontSize</td>
+            <td>14</td>
+            <td>message字体大小</td>
+        </tr>
+        <tr>
+            <td>textColor</td>
+            <td>'#ffffff'</td>
+            <td>message字体颜色</td>
+        </tr>
+        <tr>
+            <td>lineHeight</td>
+            <td>20</td>
+            <td>message字体行高</td>
+        </tr>
+        <tr>
+            <td>paddingH</td>
+            <td>10</td>
+            <td>水平padding</td>
+        </tr>
+        <tr>
+            <td>paddingV</td>
+            <td>5</td>
+            <td>上下padding</td>
+        </tr>
+        <tr>
+            <td>borderRadius</td>
+            <td>5</td>
+            <td>背景圆角</td>
+        </tr>
+        <tr>
+            <td>backgroundColor</td>
+            <td>0x00000099</td>
+            <td>背景颜色</td>
+        </tr>
+        <tr><td colspan="4">ToastComponent.show('message')，显示‘message’toast</td></tr>
+    </tbody>
+</table>
+
 <br>
 <li>BaseDialog:</li>
 <br>
