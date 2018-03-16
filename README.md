@@ -638,7 +638,7 @@
             <td>1500</td>
             <td>显示时长（自动隐藏）</td>
             <td rowspan="9">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/toast.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/toast1.png"/>
             </td>
         </tr>
         <tr>
