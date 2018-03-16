@@ -18,12 +18,11 @@ import {
     SimpleChooseDialog,
     SimpleItemsDialog,
     AlertDialog,
-    DownloadDialog
+    DownloadDialog,
+    ToastComponent
 } from 'react-native-pickers';
 
 import AreaJson from './Area.json';
-
-import ToastComponent from '../pickers/view/ToastComponent';
 
 export default class MainPage extends BaseComponent {
 
