@@ -5,7 +5,7 @@
 
 🤗 🤗 随手给颗星星呗，有bug或者交流，欢迎留言第一时间维护。🤗 🤗<br>
 
-![img](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/demo1.gif)
+![img](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/demo2.gif)
 
 ### 安装：
 <code>yarn add react-native-pickers</code><br>

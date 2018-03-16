@@ -23,6 +23,8 @@ import {
 
 import AreaJson from './Area.json';
 
+import ToastComponent from '../pickers/view/ToastComponent';
+
 export default class MainPage extends BaseComponent {
 
     constructor(props) {
@@ -54,6 +56,8 @@ export default class MainPage extends BaseComponent {
         return <TouchableOpacity
             onPress={callback.bind(this)}
             style={{
+                width: this.getSize(180), height: this.getSize(35),
+                justifyContent: 'center', alignItems: 'center',
                 borderColor: '#999999', borderWidth: this.mOnePixel,
                 padding: this.getSize(10), backgroundColor: '#cccccc',
                 borderRadius: this.getSize(4), marginBottom: this.getSize(20)
@@ -78,6 +82,9 @@ export default class MainPage extends BaseComponent {
             {this.renderButton('下载进度', () => {
                 this.DownloadDialog.show();
                 this.startDownload();
+            })}
+            {this.renderButton('showToast', () => {
+                this.ToastComponent.show('给个星星呗~')
             })}
             <AlertDialog
                 onPress={(isOK) => {
@@ -129,6 +136,7 @@ export default class MainPage extends BaseComponent {
                 active={this.state.active}
                 onAction={() => { alert('打开') }}
                 ref={ref => this.DownloadDialog = ref} />
+            <ToastComponent ref={ref => this.ToastComponent = ref} />
         </View>
     }
 
