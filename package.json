@@ -1,24 +1,25 @@
 {
-  "name": "pickers",
-  "version": "0.0.1",
-  "private": true,
+  "name": "react-native-pickers",
+  "version": "1.0.9",
+  "description": "纯JS实现的React-Native 各种弹窗、日期选择控件、地址选择控件等",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iberHK/react-native-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iberHK/react-native-picker/issues"
+  },
+  "homepage": "https://github.com/iberHK/react-native-picker",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "react": "^16.3.0-alpha.1",
-    "react-native": "0.53.3",
-    "react-native-pickers": "^1.0.8",
-    "react-native-svg": "^6.2.2"
-  },
-  "devDependencies": {
-    "babel-jest": "22.2.0",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "22.2.1",
-    "react-test-renderer": "16.2.0"
-  },
-  "jest": {
-    "preset": "react-native"
-  }
+  "keywords": [
+    "React Native",
+    "picker",
+    "pickers",
+    "dialog"
+  ],
+  "author": "iBerHK",
+  "license": "ISC"
 }
