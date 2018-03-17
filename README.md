@@ -676,7 +676,7 @@
             <td>0x00000099</td>
             <td>背景颜色</td>
         </tr>
-        <tr><td colspan="4">ToastComponent.show('message')，显示‘message’toast</td></tr>
+        <tr><td colspan="4">ToastComponent.show('message')，显示‘message’toast。应放在navigation同层，全局唯一</td></tr>
     </tbody>
 </table>
 
