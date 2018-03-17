@@ -38,11 +38,11 @@ export default class MainPage extends BaseComponent {
     startDownload() {
         let count = 0;
         this.setState({ active: false })
-        let interval = setInterval(() => {
+        this.interval = setInterval(() => {
             if (count > 100) {
                 //下载完成
                 this.setState({ active: true })
-                clearInterval(interval);
+                clearInterval(this.interval);
                 return;
             }
             this.DownloadDialog.setProcess(count / 100, '4.23MB');
@@ -134,6 +134,7 @@ export default class MainPage extends BaseComponent {
             <DownloadDialog
                 active={this.state.active}
                 onAction={() => { alert('打开') }}
+                onCoverPress={() => { this.interval && clearInterval(this.interval) }}
                 ref={ref => this.DownloadDialog = ref} />
             <ToastComponent ref={ref => this.ToastComponent = ref} />
         </View>

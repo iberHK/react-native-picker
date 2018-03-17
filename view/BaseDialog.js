@@ -11,7 +11,7 @@ import BaseComponent from './BaseComponent';
 export default class BaseDialog extends BaseComponent {
 
     static defaultProps = {
-        removeSubviews: true,   //隐藏时，是否回收前景控件
+        removeSubviews: true,   //隐藏时，是否回收前景控件，false 更流畅，true：初始化更快，dismiss后就回收
         coverClickable: true,
         onCoverPress: null
     }
