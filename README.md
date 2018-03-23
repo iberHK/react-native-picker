@@ -5,7 +5,7 @@
 
 🤗 🤗 随手给颗星星呗，有bug或者交流，欢迎留言第一时间维护。🤗 🤗<br>
 
-![img](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/demo2.gif)
+![img](https://github.com/iberHK/react-native-pickers/blob/master/screenshot/demo2.gif?raw=true)
 
 ### 安装：
 <code>yarn add react-native-pickers</code><br>
@@ -30,7 +30,7 @@
             <td>'Alert Message'</td>
             <td>消息文本</td>
             <td rowspan="10">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/AlertDialog.png?raw=true"/>
             </td>
         </tr>
         <tr>
@@ -102,7 +102,7 @@
             <td>['a', 'b', 'c']</td>
             <td>列表数据，可以string、object(需要指定itemKey)</td>
             <td rowspan="5">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/items.png?raw=true"/>
             </td>
         </tr>
         <tr>
@@ -175,7 +175,7 @@
             <td>列表数据，可以string、object<br>
                 (需要指定itemKey)</td>
             <td rowspan="5">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/simplechoosedialog.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/simplechoosedialog.png?raw=true"/>
             </td>
         </tr>
         <tr>
@@ -262,7 +262,7 @@
             <td>'我要举报'</td>
             <td>标题文本</td>
             <td rowspan="12">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/inputdialog.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/inputdialog.png?raw=true"/>
             </td>
         </tr>
         <tr>
@@ -344,7 +344,7 @@
             <td>['香港', '香港', '中西區']</td>
             <td>选中</td>
             <td rowspan="12">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/area.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/area.png?raw=true"/>
             </td>
         </tr>
         <tr>
@@ -428,7 +428,7 @@
             <td>0x333333ff</td>
             <td>item正常颜色，仅支持<code>16进制数字</code></td>
             <td rowspan="8">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png?raw=true"/>
             </td>
         </tr>
         <tr>
@@ -577,7 +577,7 @@
             <td>'视频下载'</td>
             <td>标题文本</td>
             <td rowspan="9">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/downloaddialog.gif"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/downloaddialog.gif?raw=true"/>
             </td>
         </tr>
         <tr>
@@ -638,7 +638,7 @@
             <td>1500</td>
             <td>显示时长（自动隐藏）</td>
             <td rowspan="9">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/toast1.png"/>
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/toast1.png?raw=true"/>
             </td>
         </tr>
         <tr>
