@@ -13,6 +13,239 @@
 <code>react-native link react-native-svg</code><br>
 
 ### 使用：
+
+<li>AreaPicker:</li>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+            <th>截图</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>selectedValue</td>
+            <td>['香港', '香港', '中西區']</td>
+            <td>选中</td>
+            <td rowspan="12">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/area.png?raw=true"/>
+            </td>
+        </tr>
+        <tr>
+            <td>areaJson</td>
+            <td>null</td>
+            <td>地址数据源</td>
+        </tr>
+        <tr>
+            <td>confirmText</td>
+            <td>'确定'</td>
+            <td>确定选择文本</td>
+        </tr>
+        <tr>
+            <td>confirmTextSize</td>
+            <td>14</td>
+            <td>确定选择文本字体大小</td>
+        </tr>
+        <tr>
+            <td>confirmTextColor</td>
+            <td>'#333333'</td>
+            <td>确定选择字体颜色</td>
+        </tr>
+        <tr>
+            <td>cancelText</td>
+            <td>'取消'</td>
+            <td>取消选择文本</td>
+        </tr>
+        <tr>
+            <td>cancelTextSize</td>
+            <td>14</td>
+            <td>取消选择文本字体大小</td>
+        </tr>
+        <tr>
+            <td>cancelTextColor</td>
+            <td>'#333333'</td>
+            <td>取消选择文本字体颜色</td>
+        </tr>
+        <tr>
+            <td>itemTextColor</td>
+            <td>0x333333ff</td>
+            <td>item正常颜色，仅支持<code>16进制数字</code></td>
+        </tr>
+        <tr>
+            <td>itemSelectedColor</td>
+            <td>0x1097D5ff</td>
+            <td>item选择颜色，仅支持<code>16进制数字</code></td>
+        </tr>
+        <tr>
+            <td>itemHeight</td>
+            <td>40</td>
+            <td>item高度</td>
+        </tr>
+        <tr>
+            <td>onPickerCancel</td>
+            <td>null</td>
+            <td>取消选择回调</td>
+        </tr>
+        <tr>
+            <td>onPickerConfirm</td>
+            <td>null</td>
+            <td>确认选择回调</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<li>DatePicker:</li>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>描述</th>
+            <th>截图</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>itemTextColor</td>
+            <td>0x333333ff</td>
+            <td>item正常颜色，仅支持<code>16进制数字</code></td>
+            <td rowspan="8">
+                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png?raw=true"/>
+            </td>
+        </tr>
+        <tr>
+            <td>itemSelectedColor</td>
+            <td>0x1097D5ff</td>
+            <td>item选择颜色，仅支持<code>16进制数字</code></td>
+        </tr>
+        <tr>
+            <td>onPickerCancel</td>
+            <td>null</td>
+            <td>取消选择回调</td>
+        </tr>
+        <tr>
+            <td>onPickerConfirm</td>
+            <td>null</td>
+            <td>确认选择回调</td>
+        </tr>
+        <tr>
+            <td>unit</td>
+            <td>['年', '月', '日']</td>
+            <td>单位</td>
+        </tr>
+        <tr>
+            <td>selectedValue</td>
+            <td>[
+                new Date().getFullYear() + '年', <br>
+                new Date().getMonth() + 1 + '月',<br>
+                new Date().getDate() + '日']
+            </td>
+            <td>选中</td>
+        </tr>
+        <tr>
+            <td>startYear</td>
+            <td>1990</td>
+            <td>起始年份</td>
+        </tr>
+        <tr>
+            <td>endYear</td>
+            <td>new Date().getFullYear()</td>
+            <td>截至年份</td>
+        </tr>
+        <tr>
+            <td>cancelText</td>
+            <td>'取消'</td>
+            <td>取消选择文本</td>
+        </tr>
+        <tr>
+            <td>cancelTextSize</td>
+            <td>14</td>
+            <td>取消选择文本字体大小</td>
+        </tr>
+        <tr>
+            <td>cancelTextColor</td>
+            <td>'#333333'</td>
+            <td>取消选择文本字体颜色</td>
+        </tr>
+        <tr>
+            <td>itemTextColor</td>
+            <td>0x333333ff</td>
+            <td>item正常颜色，仅支持<code>16进制数字</code></td>
+        </tr>
+        <tr>
+            <td>itemSelectedColor</td>
+            <td>0x1097D5ff</td>
+            <td>item选择颜色，仅支持<code>16进制数字</code></td>
+        </tr>
+        <tr>
+            <td>onPickerCancel</td>
+            <td>null</td>
+            <td>取消选择回调</td>
+        </tr>
+        <tr>
+            <td>onPickerConfirm</td>
+            <td>null</td>
+            <td>确认选择回调</td>
+        </tr>
+        <tr>
+            <td>confirmText</td>
+            <td>'确定'</td>
+            <td>确定选择文本</td>
+        </tr>
+        <tr>
+            <td>confirmTextSize</td>
+            <td>14</td>
+            <td>确定选择文本字体大小</td>
+        </tr>
+        <tr>
+            <td>confirmTextColor</td>
+            <td>'#333333'</td>
+            <td>确定选择字体颜色</td>
+        </tr>
+        <tr>
+            <td>cancelText</td>
+            <td>'取消'</td>
+            <td>取消选择文本</td>
+        </tr>
+        <tr>
+            <td>cancelTextSize</td>
+            <td>14</td>
+            <td>取消选择文本字体大小</td>
+        </tr>
+        <tr>
+            <td>cancelTextColor</td>
+            <td>'#333333'</td>
+            <td>取消选择文本字体颜色</td>
+        </tr>
+        <tr>
+            <td>itemHeight</td>
+            <td>40</td>
+            <td>item高度</td>
+        </tr>
+        <tr>
+            <td>HH</td>
+            <td>true</td>
+            <td>是否显示小时</td>
+        </tr>
+        <tr>
+            <td>mm</td>
+            <td>true</td>
+            <td>是否显示分钟</td>
+        </tr>
+        <tr>
+            <td>xx</td>
+            <td>false</td>
+            <td>是否显示秒</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+
 <li>AlertDialog:</li>
 <br>
 <table>
@@ -325,239 +558,6 @@
         <tr><td colspan="4">InputDialog.show(text)，显示dialog，text：用于编辑时，设置前值</td></tr>
     </tbody>
 </table>
-
-<br>
-<li>AreaPicker:</li>
-<br>
-<table>
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>描述</th>
-            <th>截图</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>selectedValue</td>
-            <td>['香港', '香港', '中西區']</td>
-            <td>选中</td>
-            <td rowspan="12">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/area.png?raw=true"/>
-            </td>
-        </tr>
-        <tr>
-            <td>areaJson</td>
-            <td>null</td>
-            <td>地址数据源</td>
-        </tr>
-        <tr>
-            <td>confirmText</td>
-            <td>'确定'</td>
-            <td>确定选择文本</td>
-        </tr>
-        <tr>
-            <td>confirmTextSize</td>
-            <td>14</td>
-            <td>确定选择文本字体大小</td>
-        </tr>
-        <tr>
-            <td>confirmTextColor</td>
-            <td>'#333333'</td>
-            <td>确定选择字体颜色</td>
-        </tr>
-        <tr>
-            <td>cancelText</td>
-            <td>'取消'</td>
-            <td>取消选择文本</td>
-        </tr>
-        <tr>
-            <td>cancelTextSize</td>
-            <td>14</td>
-            <td>取消选择文本字体大小</td>
-        </tr>
-        <tr>
-            <td>cancelTextColor</td>
-            <td>'#333333'</td>
-            <td>取消选择文本字体颜色</td>
-        </tr>
-        <tr>
-            <td>itemTextColor</td>
-            <td>0x333333ff</td>
-            <td>item正常颜色，仅支持<code>16进制数字</code></td>
-        </tr>
-        <tr>
-            <td>itemSelectedColor</td>
-            <td>0x1097D5ff</td>
-            <td>item选择颜色，仅支持<code>16进制数字</code></td>
-        </tr>
-        <tr>
-            <td>itemHeight</td>
-            <td>40</td>
-            <td>item高度</td>
-        </tr>
-        <tr>
-            <td>onPickerCancel</td>
-            <td>null</td>
-            <td>取消选择回调</td>
-        </tr>
-        <tr>
-            <td>onPickerConfirm</td>
-            <td>null</td>
-            <td>确认选择回调</td>
-        </tr>
-    </tbody>
-</table>
-
-<br>
-<li>DatePicker:</li>
-<br>
-<table>
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>描述</th>
-            <th>截图</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>itemTextColor</td>
-            <td>0x333333ff</td>
-            <td>item正常颜色，仅支持<code>16进制数字</code></td>
-            <td rowspan="8">
-                <img src="https://github.com/iberHK/react-native-pickers/blob/master/screenshot/date.png?raw=true"/>
-            </td>
-        </tr>
-        <tr>
-            <td>itemSelectedColor</td>
-            <td>0x1097D5ff</td>
-            <td>item选择颜色，仅支持<code>16进制数字</code></td>
-        </tr>
-        <tr>
-            <td>onPickerCancel</td>
-            <td>null</td>
-            <td>取消选择回调</td>
-        </tr>
-        <tr>
-            <td>onPickerConfirm</td>
-            <td>null</td>
-            <td>确认选择回调</td>
-        </tr>
-        <tr>
-            <td>unit</td>
-            <td>['年', '月', '日']</td>
-            <td>单位</td>
-        </tr>
-        <tr>
-            <td>selectedValue</td>
-            <td>[
-                new Date().getFullYear() + '年', <br>
-                new Date().getMonth() + 1 + '月',<br>
-                new Date().getDate() + '日']
-            </td>
-            <td>选中</td>
-        </tr>
-        <tr>
-            <td>startYear</td>
-            <td>1990</td>
-            <td>起始年份</td>
-        </tr>
-        <tr>
-            <td>endYear</td>
-            <td>new Date().getFullYear()</td>
-            <td>截至年份</td>
-        </tr>
-        <tr>
-            <td>cancelText</td>
-            <td>'取消'</td>
-            <td>取消选择文本</td>
-        </tr>
-        <tr>
-            <td>cancelTextSize</td>
-            <td>14</td>
-            <td>取消选择文本字体大小</td>
-        </tr>
-        <tr>
-            <td>cancelTextColor</td>
-            <td>'#333333'</td>
-            <td>取消选择文本字体颜色</td>
-        </tr>
-        <tr>
-            <td>itemTextColor</td>
-            <td>0x333333ff</td>
-            <td>item正常颜色，仅支持<code>16进制数字</code></td>
-        </tr>
-        <tr>
-            <td>itemSelectedColor</td>
-            <td>0x1097D5ff</td>
-            <td>item选择颜色，仅支持<code>16进制数字</code></td>
-        </tr>
-        <tr>
-            <td>onPickerCancel</td>
-            <td>null</td>
-            <td>取消选择回调</td>
-        </tr>
-        <tr>
-            <td>onPickerConfirm</td>
-            <td>null</td>
-            <td>确认选择回调</td>
-        </tr>
-        <tr>
-            <td>confirmText</td>
-            <td>'确定'</td>
-            <td>确定选择文本</td>
-        </tr>
-        <tr>
-            <td>confirmTextSize</td>
-            <td>14</td>
-            <td>确定选择文本字体大小</td>
-        </tr>
-        <tr>
-            <td>confirmTextColor</td>
-            <td>'#333333'</td>
-            <td>确定选择字体颜色</td>
-        </tr>
-        <tr>
-            <td>cancelText</td>
-            <td>'取消'</td>
-            <td>取消选择文本</td>
-        </tr>
-        <tr>
-            <td>cancelTextSize</td>
-            <td>14</td>
-            <td>取消选择文本字体大小</td>
-        </tr>
-        <tr>
-            <td>cancelTextColor</td>
-            <td>'#333333'</td>
-            <td>取消选择文本字体颜色</td>
-        </tr>
-        <tr>
-            <td>itemHeight</td>
-            <td>40</td>
-            <td>item高度</td>
-        </tr>
-        <tr>
-            <td>HH</td>
-            <td>true</td>
-            <td>是否显示小时</td>
-        </tr>
-        <tr>
-            <td>mm</td>
-            <td>true</td>
-            <td>是否显示分钟</td>
-        </tr>
-        <tr>
-            <td>xx</td>
-            <td>false</td>
-            <td>是否显示秒</td>
-        </tr>
-    </tbody>
-</table>
-
 
 <br>
 <li>DownloadDialog:</li>
