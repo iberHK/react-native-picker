@@ -750,7 +750,7 @@
     </tbody>
 </table>
 
-### 为了遵循Android和ios统一的布局，Android需要让布局的内容延伸到状态栏。否则Android中需要设置marginTop:“-状态栏高度”
+### 让Android遵循和ios统一的布局，Android需要让布局的内容延伸到状态栏。否则Android中需要设置top:“-状态栏高度”
 
 ```
 public class MainActivity extends ReactActivity {
