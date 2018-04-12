@@ -81,7 +81,7 @@ class InputDialog extends BaseDialog {
                 placeholder={this.props.placeholder}
                 placeholderTextColor='#999999'
                 onChangeText={(text) => {
-                    this.setState({ text: text })
+                    this.inputText = text;
                 }} />
             <View style={{
                 width: this.mScreenWidth, height: this.getSize(48), paddingRight: this.getSize(15),
@@ -89,7 +89,7 @@ class InputDialog extends BaseDialog {
             }}>
                 <TouchableOpacity
                     onPress={() => this.dismiss(() => {
-                        this.props.onSubmit && this.props.onSubmit(this.state.text);
+                        this.props.onSubmit && this.props.onSubmit(this.inputText);
                     })}
                     style={{
                         width: this.getSize(60), height: this.getSize(28),
