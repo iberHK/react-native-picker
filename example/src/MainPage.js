@@ -70,73 +70,76 @@ export default class MainPage extends BaseComponent {
             width: this.mScreenWidth, height: this.mScreenHeight,
             backgroundColor: '#f9fafb', justifyContent: 'center', alignItems: 'center'
         }}>
-            {this.renderButton('AlertDialog', () => { this.AlertDialog.show() })}
-            {this.renderButton('SimpleItemsDialog', () => { this.SimpleItemsDialog.show() })}
-            {this.renderButton('SimpleChooseDialog', () => { this.SimpleChooseDialog.show() })}
-            {this.renderButton('InputDialog', () => { this.InputDialog.show() })}
-            {this.renderButton('最简单的自定义picker', () => { this.CustomPicker.show() })}
-            {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
-            {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
-            {this.renderButton('DatePicker1', () => { this.DatePicker1.show() })}
-            {this.renderButton('下载进度', () => {
-                this.DownloadDialog.show();
-                this.startDownload();
-            })}
-            {this.renderButton('showToast', () => {
-                this.ToastComponent.show('给个星星呗~')
-            })}
-            <AlertDialog
-                onPress={(isOK) => {
-                    alert(isOK ? 'ok' : 'cancel');
-                }} ref={ref => this.AlertDialog = ref} />
-            <SimpleItemsDialog
-                items={[{ value: 1 }, { value: 2 }, { value: 3 }]}
-                itemKey='value'
-                ref={ref => this.SimpleItemsDialog = ref}
-                onPress={(which) => {
-                    alert(which)
-                }} />
-            <SimpleChooseDialog ref={ref => this.SimpleChooseDialog = ref}
-                onPress={(which) => { alert(which) }} />
-            <InputDialog ref={ref => this.InputDialog = ref}
-                onSubmit={(text) => { alert(text) }} />
-            <CustomPicker ref={ref => this.CustomPicker = ref} />
-            <AreaPicker
-                areaJson={AreaJson}
-                onPickerCancel={() => { }}
-                onPickerConfirm={(value) => {
-                    alert(JSON.stringify(value));
-                }}
-                ref={ref => this.AreaPicker = ref} />
-            <DatePicker
-                unit={this.state.unit}
-                startYear={this.state.startYear}
-                onPickerConfirm={(value) => {
-                    alert(JSON.stringify(value))
-                }}
-                onPickerCancel={() => {
-                    alert('cancel')
-                }}
-                ref={ref => this.DatePicker = ref} />
-            <DatePicker
-                HH={false}
-                mm={false}
-                ss={false}
-                unit={this.state.unit}
-                startYear={this.state.startYear}
-                onPickerConfirm={(value) => {
-                    alert(JSON.stringify(value))
-                }}
-                onPickerCancel={() => {
-                    alert('cancel')
-                }}
-                ref={ref => this.DatePicker1 = ref} />
-            <DownloadDialog
-                active={this.state.active}
-                onAction={() => { alert('打开') }}
-                onCoverPress={() => { this.interval && clearInterval(this.interval) }}
-                ref={ref => this.DownloadDialog = ref} />
-            <ToastComponent ref={ref => this.ToastComponent = ref} />
+            <View style={{ width: this.mScreenWidth, height: 60, backgroundColor: 0x00000030 }} />
+            <View style={{ flex: 1, width: this.mScreenWidth, justifyContent: 'center', alignItems: 'center' }}>
+                {this.renderButton('AlertDialog', () => { this.AlertDialog.show() })}
+                {this.renderButton('SimpleItemsDialog', () => { this.SimpleItemsDialog.show() })}
+                {this.renderButton('SimpleChooseDialog', () => { this.SimpleChooseDialog.show() })}
+                {this.renderButton('InputDialog', () => { this.InputDialog.show() })}
+                {this.renderButton('最简单的自定义picker', () => { this.CustomPicker.show() })}
+                {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
+                {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
+                {this.renderButton('DatePicker1', () => { this.DatePicker1.show() })}
+                {this.renderButton('下载进度', () => {
+                    this.DownloadDialog.show();
+                    this.startDownload();
+                })}
+                {this.renderButton('showToast', () => {
+                    this.ToastComponent.show('给个星星呗~')
+                })}
+                <AlertDialog
+                    onPress={(isOK) => {
+                        alert(isOK ? 'ok' : 'cancel');
+                    }} ref={ref => this.AlertDialog = ref} />
+                <SimpleItemsDialog
+                    items={[{ value: 1 }, { value: 2 }, { value: 3 }]}
+                    itemKey='value'
+                    ref={ref => this.SimpleItemsDialog = ref}
+                    onPress={(which) => {
+                        alert(which)
+                    }} />
+                <SimpleChooseDialog ref={ref => this.SimpleChooseDialog = ref}
+                    onPress={(which) => { alert(which) }} />
+                <InputDialog ref={ref => this.InputDialog = ref}
+                    onSubmit={(text) => { alert(text) }} />
+                <CustomPicker ref={ref => this.CustomPicker = ref} />
+                <AreaPicker
+                    areaJson={AreaJson}
+                    onPickerCancel={() => { }}
+                    onPickerConfirm={(value) => {
+                        alert(JSON.stringify(value));
+                    }}
+                    ref={ref => this.AreaPicker = ref} />
+                <DatePicker
+                    unit={this.state.unit}
+                    startYear={this.state.startYear}
+                    onPickerConfirm={(value) => {
+                        alert(JSON.stringify(value))
+                    }}
+                    onPickerCancel={() => {
+                        alert('cancel')
+                    }}
+                    ref={ref => this.DatePicker = ref} />
+                <DatePicker
+                    HH={false}
+                    mm={false}
+                    ss={false}
+                    unit={this.state.unit}
+                    startYear={this.state.startYear}
+                    onPickerConfirm={(value) => {
+                        alert(JSON.stringify(value))
+                    }}
+                    onPickerCancel={() => {
+                        alert('cancel')
+                    }}
+                    ref={ref => this.DatePicker1 = ref} />
+                <DownloadDialog
+                    active={this.state.active}
+                    onAction={() => { alert('打开') }}
+                    onCoverPress={() => { this.interval && clearInterval(this.interval) }}
+                    ref={ref => this.DownloadDialog = ref} />
+                <ToastComponent ref={ref => this.ToastComponent = ref} />
+            </View>
         </View>
     }
 
