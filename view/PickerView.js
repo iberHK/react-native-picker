@@ -267,15 +267,6 @@ class PickerView extends BaseComponent {
             width: this.props.itemWidth, height: this.props.itemHeight * 5 + this.getSize(15),
             backgroundColor: '#ffffff'
         }}>
-            <FlatList
-                keyExtractor={(item, index) => index}
-                style={{
-                    width: this.props.itemWidth, height: this.props.itemHeight * 5 + this.getSize(15),
-                    backgroundColor: '#ffffff', position: 'absolute'
-                }}
-                renderItem={(item) => {
-                    return this.renderItem(item.item, item.index);
-                }} />
             <View
                 ref={ref => this.ref = ref}
                 {...this._panResponder.panHandlers}
