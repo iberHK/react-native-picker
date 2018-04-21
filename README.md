@@ -749,39 +749,3 @@
         </tr>
     </tbody>
 </table>
-
-### 让Android遵循和ios统一的布局，Android需要让布局的内容延伸到状态栏。否则Android中需要设置top:“-状态栏高度”
-
-```
-public class MainActivity extends ReactActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Window window = getWindow();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // Translucent status bar
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(Color.TRANSPARENT);
-        }
-        StatusBarUtil.StatusBarLightMode(this);
-        super.onCreate(savedInstanceState);
-    }
-
-    /**
-     * Returns the name of the main component registered from JavaScript.
-     * This is used to schedule rendering of the component.
-     */
-    @Override
-    protected String getMainComponentName() {
-        return "xfireApp";
-    }
-}
-
-```
