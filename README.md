@@ -707,6 +707,11 @@
             <td>null</td>
             <td>点击背景，dismiss回调</td>
         </tr>
+        <tr>
+            <td>showAnimationType</td>
+            <td>null</td>
+            <td>入场动画方式 spring timing</td>
+        </tr>
     </tbody>
 </table>
 
