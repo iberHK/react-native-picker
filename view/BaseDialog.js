@@ -14,7 +14,8 @@ export default class BaseDialog extends BaseComponent {
     static defaultProps = {
         removeSubviews: true,   //隐藏时，是否回收前景控件，false 更流畅，true：初始化更快，dismiss后就回收
         coverClickable: true,
-        onCoverPress: null
+        onCoverPress: null,
+        showAnimationType: 'spring'
     }
 
     _path = new Animated.Value(0);
@@ -33,9 +34,15 @@ export default class BaseDialog extends BaseComponent {
 
     show(callback, state = {}) {
         this.setState({ _isShow: true, ...state }, () => {
-            Animated.spring(this._path, { toValue: 1 }).start(() => {
-                callback && callback();
-            });
+            if (!this.props.showAnimationType || this.props.showAnimationType == 'spring') {
+                Animated.spring(this._path, { toValue: 1 }).start(() => {
+                    callback && callback();
+                });
+            } else {
+                Animated.timing(this._path, { toValue: 1 }).start(() => {
+                    callback && callback();
+                });
+            }
         });
     }
 

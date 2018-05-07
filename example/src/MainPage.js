@@ -88,6 +88,7 @@ export default class MainPage extends BaseComponent {
                     this.ToastComponent.show('给个星星呗~')
                 })}
                 <AlertDialog
+                    showAnimationType='timing'
                     onPress={(isOK) => {
                         alert(isOK ? 'ok' : 'cancel');
                     }} ref={ref => this.AlertDialog = ref} />
