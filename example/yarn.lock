@@ -3601,9 +3601,9 @@ react-devtools-core@3.0.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-pickers@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/react-native-pickers/-/react-native-pickers-1.1.7.tgz#da1558fa9bcb46e866e6fedba656992ea6bb5906"
+react-native-pickers@^1.1.9:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/react-native-pickers/-/react-native-pickers-1.1.8.tgz#3897319497175d6c8787897ae64471cd8483d7c2"
 
 react-native-svg@^6.2.2:
   version "6.2.2"

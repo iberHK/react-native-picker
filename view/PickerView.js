@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 
 import {
     View,
-    Text,
     Animated,
-    PanResponder,
-    FlatList
+    PanResponder
 } from 'react-native';
 
 import BaseComponent from './BaseComponent';
@@ -52,7 +50,7 @@ class PickerView extends BaseComponent {
         this.onPanResponderMove = this.onPanResponderMove.bind(this);
         this.onPanResponderEnd = this.onPanResponderEnd.bind(this);
 
-        //這裏固定在屏幕底部，所以直接寫死touch區域即可。否則 可使用UIManager.measureInWindow 來計算具體的touch區域
+        //這裏固定在屏幕底部，所以直接寫死touch區域即可。
         this.parentTopY = this.mScreenHeight - props.itemHeight * 5 - this.getSize(15);
         this.parentBottomY = this.mScreenHeight - this.getSize(15);
     }

@@ -91,7 +91,9 @@ class DatePicker extends BaseDialog {
             years.indexOf(selectedYear + unit[0]) == -1 ? years.length - 1 : years.indexOf(selectedYear + unit[0]),
             months.indexOf(selectedMonth + unit[1]),
             days.indexOf(selectedDay + unit[2]) == -1 ? days.length - 1 : days.indexOf(selectedDay + unit[2])];
-
+        this.props.selectedValue[0] = years[selectedIndex[0]];
+        this.props.selectedValue[1] = months[selectedIndex[1]];
+        this.props.selectedValue[2] = days[selectedIndex[2]];
         if (this.props.HH) {
             let hours = [];
             for (let i = 0; i < 24; i++) {
