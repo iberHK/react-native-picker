@@ -5,6 +5,7 @@ import {
     View,
     Text,
     TouchableOpacity,
+    Modal
 } from 'react-native';
 
 import {
@@ -31,7 +32,8 @@ export default class MainPage extends BaseComponent {
         this.state = {
             unit: ['年', '月', '日'],
             startYear: 1900,
-            active: false
+            active: false,
+            modalVisible: false
         }
     }
 
@@ -80,6 +82,7 @@ export default class MainPage extends BaseComponent {
                 {this.renderButton('行政区域picker', () => { this.AreaPicker.show() })}
                 {this.renderButton('DatePicker', () => { this.DatePicker.show() })}
                 {this.renderButton('DatePicker1', () => { this.DatePicker1.show() })}
+                {this.renderButton('实现全屏覆盖', () => { console.log('xxxxx'); this.setState({modalVisible: true}, ()=>{this.SimpleChooseDialog1.show();}); })}
                 {this.renderButton('下载进度', () => {
                     this.DownloadDialog.show();
                     this.startDownload();
@@ -141,6 +144,23 @@ export default class MainPage extends BaseComponent {
                     ref={ref => this.DownloadDialog = ref} />
                 <ToastComponent ref={ref => this.ToastComponent = ref} />
             </View>
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={this.state.modalVisible}
+                onRequestClose={() => {
+                    
+                }}
+            >
+                <SimpleChooseDialog ref={ref => this.SimpleChooseDialog1 = ref}
+                    onCoverPress={()=>{
+                        this.setState({modalVisible: false});
+                    }}
+                    onPress={(which) => {  
+                        console.log(which);
+                        this.setState({modalVisible: false});
+                    }} />
+            </Modal>
         </View>
     }
 
