@@ -65,8 +65,7 @@ class AreaPicker extends BaseDialog {
         let province = [];
         let city = [];
         let county = [];
-        let firstCity = null;
-        let firstCountry = null;
+        let firstCity = firstCountry = '';
         let areaData = this.getAreaData();
         areaData.map((pitem) => {
             for (let pname in pitem) {
@@ -74,13 +73,13 @@ class AreaPicker extends BaseDialog {
                 if (this.props.selectedValue[1] && pname == this.props.selectedValue[0]) {
                     pitem[pname] && pitem[pname].map(citem => {
                         for (let cname in citem) {
-                            if (firstCity == null) {
+                            if (!firstCity) {
                                 firstCity = cname;
                             }
                             city.push(cname);
                             if (this.props.selectedValue[2] && cname == this.props.selectedValue[1]) {
                                 county = citem[cname];
-                                if (firstCountry == null) {
+                                if (!firstCountry) {
                                     firstCountry = citem[cname][0];
                                 }
                             }
@@ -90,18 +89,18 @@ class AreaPicker extends BaseDialog {
             }
         });
 
-        if (this.props.selectedValue[2] && county.length && county.indexOf(this.props.selectedValue[2]) == -1 && firstCountry) {
+        if (this.props.selectedValue[2] && county.indexOf(this.props.selectedValue[2]) == -1 && firstCountry) {
             this.props.selectedValue[2] = firstCountry;
         }
 
-        if (this.props.selectedValue[1] && city.length && city.indexOf(this.props.selectedValue[1]) == -1 && firstCity) {
+        if (this.props.selectedValue[1] && city.indexOf(this.props.selectedValue[1]) == -1 && firstCity) {
             this.props.selectedValue[1] = firstCity;
             return this.formatPickerData();
         }
 
         let pickerData = [province]
-        city && city.length && pickerData.push(city)
-        county && county.length && pickerData.push(county)
+        city.length && pickerData.push(city)
+        county.length && pickerData.push(county)
 
         return {
             pickerData, visible: true
