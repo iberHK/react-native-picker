@@ -90,11 +90,11 @@ class AreaPicker extends BaseDialog {
             }
         });
 
-        if (this.props.selectedValue[2] && county.length && county.indexOf(this.props.selectedValue[2]) == -1) {
+        if (this.props.selectedValue[2] && county.length && county.indexOf(this.props.selectedValue[2]) == -1 && firstCountry) {
             this.props.selectedValue[2] = firstCountry;
         }
 
-        if (this.props.selectedValue[1] && city.length && city.indexOf(this.props.selectedValue[1]) == -1 && firstCity != null) {
+        if (this.props.selectedValue[1] && city.length && city.indexOf(this.props.selectedValue[1]) == -1 && firstCity) {
             this.props.selectedValue[1] = firstCity;
             return this.formatPickerData();
         }
