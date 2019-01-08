@@ -71,14 +71,14 @@ class AreaPicker extends BaseDialog {
         areaData.map((pitem) => {
             for (let pname in pitem) {
                 province.push(pname)
-                if (pname == this.props.selectedValue[0]) {
-                    pitem[pname].map(citem => {
+                if (this.props.selectedValue[1] && pname == this.props.selectedValue[0]) {
+                    pitem[pname] && pitem[pname].map(citem => {
                         for (let cname in citem) {
                             if (firstCity == null) {
                                 firstCity = cname;
                             }
                             city.push(cname);
-                            if (cname == this.props.selectedValue[1]) {
+                            if (this.props.selectedValue[2] && cname == this.props.selectedValue[1]) {
                                 county = citem[cname];
                                 if (firstCountry == null) {
                                     firstCountry = citem[cname][0];
@@ -90,17 +90,21 @@ class AreaPicker extends BaseDialog {
             }
         });
 
-        if (county.indexOf(this.props.selectedValue[2]) == -1) {
+        if (this.props.selectedValue[2] && county && county.length && county.indexOf(this.props.selectedValue[2]) == -1) {
             this.props.selectedValue[2] = firstCountry;
         }
 
-        if (county.length == 0 && firstCity != null) {
+        if (this.props.selectedValue[2] && county && !county.length && firstCity != null) {
             this.props.selectedValue[1] = firstCity;
             return this.formatPickerData();
         }
 
+        let pickerData = [province]
+        city && city.length && pickerData.push(city)
+        county && county.length && pickerData.push(county)
+
         return {
-            pickerData: [province, city, county], visible: true
+            pickerData, visible: true
         };
     }
 
