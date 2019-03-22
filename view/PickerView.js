@@ -333,7 +333,7 @@ class PickerView extends BaseComponent {
                         fill="url(#grad)"
                         clipPath="url(#clip)"
                     />
-                </Svg>*/>
+                </Svg>*/}
                 <View style={{ width: this.mScreenWidth, height: this.getSize(15), bottom: 0, backgroundColor: '#ffffff', position: 'absolute' }} />
             </View>
 
