@@ -1,5 +1,5 @@
 {
-  "name": "react-native-pickers",
+  "name": "react-native-pickers-1",
   "version": "2.0.0",
   "description": "纯JS实现的React-Native 各种弹窗、日期选择控件、地址选择控件等",
   "main": "index.js",
