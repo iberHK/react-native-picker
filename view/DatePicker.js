@@ -97,7 +97,7 @@ class DatePicker extends BaseDialog {
         if (this.props.HH) {
             let hours = [];
             for (let i = 0; i < 24; i++) {
-                hours.push((i + 1) + '时');
+                hours.push(i + '时');
             }
             pickerData.push(hours);
             if (this.props.selectedValue) {
@@ -109,7 +109,7 @@ class DatePicker extends BaseDialog {
             if (this.props.mm) {
                 let minutes = [];
                 for (let i = 0; i < 60; i++) {
-                    minutes.push((i + 1) + '分');
+                    minutes.push(i + '分');
                 }
                 pickerData.push(minutes);
                 if (this.props.selectedValue) {
@@ -121,7 +121,7 @@ class DatePicker extends BaseDialog {
                 if (this.props.ss) {
                     let seconds = [];
                     for (let i = 0; i < 60; i++) {
-                        seconds.push((i + 1) + '秒');
+                        seconds.push(i + '秒');
                     }
                     pickerData.push(seconds);
                     if (this.props.selectedValue) {
