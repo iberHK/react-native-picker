@@ -97,39 +97,39 @@ class DatePicker extends BaseDialog {
         if (this.props.HH) {
             let hours = [];
             for (let i = 0; i < 24; i++) {
-                hours.push((i + 1) + '时');
+                hours.push(i + '时');
             }
             pickerData.push(hours);
             if (this.props.selectedValue) {
-                selectedIndex.push((this.props.selectedValue[3] ? parseInt(this.props.selectedValue[3]) : new Date().getHours()) - 1);
+                selectedIndex.push((this.props.selectedValue[3] ? parseInt(this.props.selectedValue[3]) : new Date().getHours()));
             } else {
-                selectedIndex.push((new Date().getHours() - 1));
+                selectedIndex.push((new Date().getHours()));
             }
-            this.props.selectedValue[3] = (selectedIndex[3] + 1) + '时';
+            this.props.selectedValue[3] = (selectedIndex[3]) + '时';
             if (this.props.mm) {
                 let minutes = [];
                 for (let i = 0; i < 60; i++) {
-                    minutes.push((i + 1) + '分');
+                    minutes.push(i + '分');
                 }
                 pickerData.push(minutes);
                 if (this.props.selectedValue) {
-                    selectedIndex.push((this.props.selectedValue[4] ? parseInt(this.props.selectedValue[4]) : new Date().getMinutes()) - 1);
+                    selectedIndex.push((this.props.selectedValue[4] ? parseInt(this.props.selectedValue[4]) : new Date().getMinutes()));
                 } else {
-                    selectedIndex.push((new Date().getMinutes() - 1));
+                    selectedIndex.push((new Date().getMinutes()));
                 }
-                this.props.selectedValue[4] = (selectedIndex[4] + 1) + '分';
+                this.props.selectedValue[4] = (selectedIndex[4]) + '分';
                 if (this.props.ss) {
                     let seconds = [];
                     for (let i = 0; i < 60; i++) {
-                        seconds.push((i + 1) + '秒');
+                        seconds.push(i + '秒');
                     }
                     pickerData.push(seconds);
                     if (this.props.selectedValue) {
-                        selectedIndex.push((this.props.selectedValue[5] ? parseInt(this.props.selectedValue[5]) : 1) - 1);
+                        selectedIndex.push((this.props.selectedValue[5] ? parseInt(this.props.selectedValue[5]) : 1));
                     } else {
-                        selectedIndex.push(1);
+                        selectedIndex.push(0);
                     }
-                    this.props.selectedValue[5] = (selectedIndex[5] + 1) + '秒';
+                    this.props.selectedValue[5] = (selectedIndex[5]) + '秒';
                 }
             }
         }

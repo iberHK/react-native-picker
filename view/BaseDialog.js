@@ -35,11 +35,11 @@ export default class BaseDialog extends BaseComponent {
     show(callback, state = {}) {
         this.setState({ _isShow: true, ...state }, () => {
             if (!this.props.showAnimationType || this.props.showAnimationType == 'spring') {
-                Animated.spring(this._path, { toValue: 1 }).start(() => {
+                Animated.spring(this._path, { toValue: 1, useNativeDriver: true }).start(() => {
                     callback && callback();
                 });
             } else {
-                Animated.timing(this._path, { toValue: 1 }).start(() => {
+                Animated.timing(this._path, { toValue: 1, useNativeDriver: true }).start(() => {
                     callback && callback();
                 });
             }
@@ -47,7 +47,7 @@ export default class BaseDialog extends BaseComponent {
     }
 
     dismiss(callback) {
-        Animated.timing(this._path, { toValue: 0, duration: 200 }).start(() => {
+        Animated.timing(this._path, { toValue: 0, duration: 200, useNativeDriver: true }).start(() => {
             this.setState({ _isShow: false }, () => {
                 callback && callback();
             });
